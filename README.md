@@ -4,7 +4,7 @@
 
 # Project List
 ## Common Core
-Project | Language
-======= | ========
-[libft](https://github.com/excubitrix/42cursus/tree/main/libft) | C
-[]() | C
+| PROJECT | LANGUAGE |
+| ================ | ======== |
+| [Libft](./Libft) | C        |
+| []() | C |
