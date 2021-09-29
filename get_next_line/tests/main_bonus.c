@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:17:35 by floogman          #+#    #+#             */
-/*   Updated: 2021/09/29 10:28:43 by floogman         ###   ########.fr       */
+/*   Updated: 2021/09/29 13:04:21 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../bonus/get_next_line_bonus.h"
 #include <fcntl.h>
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
@@ -26,7 +27,7 @@ int	main(int argc, char **argv)
 		return (-1);
 	while (get_next_line(fd, &line) == 1)
 	{
-		ft_putendl(line);
+		printf("%s\n", line);
 		free(line);
 	}
 	if (argc == 2)

@@ -4,34 +4,42 @@ The aim of this project is to code a function that returns a line ending with a 
 
 ## :small_orange_diamond: Instructions
 
-1. (optional) change the `BUFFER_SIZE` in the Makefile
-
-2. run
+1. Run
 ```
 make
 ```
-to test without bonuses and
+for a library containing the mandatory version or
 ```
 make bonus
 ```
-to test with bonuses.
+for a library containing the bonus version.
 
-3. execute without arguments to read from stdin
+2. Link the resulting library `libgnl.a` using the `-L`/`-l` flags.
 ```
-./gnl
+gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ```
-or with the name of the file to read from as first argument to read from a file.
+
+## :small_orange_diamond: Tester
+
+To test the mandatory version, run the `tester.sh` located in `./tests` without arguments.
 ```
-./gnl test.txt
+./tests/tester.sh
+```
+To test the bonus version, add the `-b` flag.
+```
+./tests/tester.sh -b
 ```
 
 ## :small_orange_diamond: Resources
 ### GCC
 - [-D Option Flag](https://www.rapidtables.com/code/linux/gcc/gcc-d.html)
+- [-L / -l Option Flags](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)
 ### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
     - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
+### Bash Scripting
+- [Cheatsheet](https://devhints.io/bash)
 ### README.md
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)

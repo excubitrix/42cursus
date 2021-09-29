@@ -6,25 +6,23 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/09/28 13:55:33 by floogman         ###   ########.fr        #
+#    Updated: 2021/09/29 13:44:50 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = gnl.out
-BONUS = gnl_bonus.out
+NAME = libgnl.a
+BONUS = $(BNSDIR)libbns.a
 FLAGS = -Wall -Wextra -Werror
 
 # BUFFER_SIZE *-------------------------------------
-VAR = -D BUFFER_SIZE=42
+VAR = -D BUFFER_SIZE=32
 # *-------------------------------------------------
 
-INCDIR = ./includes/
 INC = get_next_line.h
-INCS = $(addprefix $(INCDIR), $(INC))
+INCS = $(addprefix $(SRCDIR), $(INC))
 
-SRCDIR = ./srcs/
+SRCDIR = ./
 SRC = \
-	main.c \
 	get_next_line.c \
 	get_next_line_utils.c
 
@@ -34,11 +32,10 @@ OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
 # BONUS
 BNSINC = get_next_line_bonus.h
-BNSINCS = $(addprefix $(INCDIR), $(BNSINC))
+BNSINCS = $(addprefix $(BNSDIR), $(BNSINC))
 
 BNSDIR = ./bonus/
 BNS = \
-	main_bonus.c \
 	get_next_line_bonus.c \
 	get_next_line_utils_bonus.c
 
@@ -49,10 +46,11 @@ BNSOBJS = $(addprefix $(OBJDIR), $(BNSOBJ))
 all: $(NAME)
 
 $(NAME): $(OBJDIR) $(OBJS) $(INCS)
-	gcc $(FLAGS) $(OBJS) -I$(INCDIR) $(VAR) -o $(NAME)
+	ar -rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCS)
-	gcc $(FLAGS) -I$(INCDIR) $(VAR) -c -o $@ $<
+	gcc $(FLAGS) $(VAR) -I $(SRCDIR) -c -o $@ $<
 
 $(OBJDIR):
 	@ mkdir -p $(OBJDIR)
@@ -61,10 +59,12 @@ $(OBJDIR):
 bonus: $(BONUS)
 
 $(BONUS): $(OBJDIR) $(BNSOBJS) $(BNSINCS)
-	gcc $(FLAGS) $(BNSOBJS) -I$(INCDIR) $(VAR) -o $(BONUS)
+	ar -rc $(BONUS) $(BNSOBJS)
+	ranlib $(BONUS)
+	cp $(BONUS) $(NAME)
 
 $(OBJDIR)%.o: $(BNSDIR)%.c $(BNSINCS)
-	gcc $(FLAGS) -I$(INCDIR) $(VAR) -c -o $@ $<
+	gcc $(FLAGS) $(VAR) -I $(BNSDIR) -c -o $@ $<
 
 # MISC
 clean:
