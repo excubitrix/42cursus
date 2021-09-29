@@ -5,5 +5,6 @@
 # Project List
 ## Common Core
 | Project |
+| = |
 | [libft](https://github.com/excubitrix/42cursus/tree/main/libft) |
 | []() |
