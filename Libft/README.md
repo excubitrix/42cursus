@@ -21,7 +21,8 @@ gcc -Wall -Wextra -Werror -L. -lft main.c
 
 ## :small_orange_diamond: Resources
 - [Linux Man Pages](https://linux.die.net/man/)
-- [Create a Library w/ ar](https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-ar-create-maintain-library-archives)
+### ar
+- [Create or Maintain Library Archives](https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-ar-create-maintain-library-archives)
 ### GCC
 - [-L / -l Option Flags](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)
 ### Makefile
