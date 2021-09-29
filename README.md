@@ -4,7 +4,7 @@
 
 ## Project List
 ### Common Core
-| | PROJECT | LANGUAGE |
-| | ================ | ======== |
+| . | PROJECT | LANGUAGE |
+| = | ================ | ======== |
 | | [Libft](./Libft) | C        |
 | | []() | C |
