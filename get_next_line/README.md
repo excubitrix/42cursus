@@ -4,17 +4,11 @@ The aim of this project is to code a function that returns a line ending with a 
 
 ## :small_orange_diamond: Instructions
 
-1. Run
-```
-make
-```
-for a library containing the mandatory version or
-```
-make bonus
-```
-for a library containing the bonus version.
+1. Run `make` for a library containing the mandatory version<br>
+or `make bonus` for a library containing the bonus version.
 
 2. Link the resulting library `libgnl.a` using the `-L`/`-l` flags.
+
 ```
 gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ```
@@ -22,10 +16,13 @@ gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ## :small_orange_diamond: Tester
 
 To test the mandatory version, run the `tester.sh` located in `./tests` without arguments.
+
 ```
 ./tests/tester.sh
 ```
+
 To test the bonus version, add the `-b` flag.
+
 ```
 ./tests/tester.sh -b
 ```

@@ -4,17 +4,11 @@ This is the very first project of the 2019 42cursus. Its aim is to code a C libr
 
 ## :small_orange_diamond: Instructions
 
-1. Run
-```
-make
-```
-for a library containing only the mandatory functions or
-```
-make bonus
-```
-for a library containing all functions.
+1. Run `make` for a library containing only the mandatory functions<br>
+or `make bonus` for a library containing all functions.
 
 2. Link the resulting library `libft.a` using the `-L`/`-l` flags.
+
 ```
 gcc -Wall -Wextra -Werror -L. -lft main.c
 ```
