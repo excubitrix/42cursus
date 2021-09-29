@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 11:59:13 by floogman          #+#    #+#             */
-/*   Updated: 2021/09/28 13:38:25 by floogman         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:27:11 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	do_line(char **s, char **line, int index)
 int	get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];
-	static char *s[OPEN_MAX];
+	static char	*s[OPEN_MAX];
 	int			bytes;
 
 	if (fd > OPEN_MAX || fd < 0 || !line)

@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:17:35 by floogman          #+#    #+#             */
-/*   Updated: 2021/09/29 10:14:11 by floogman         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:27:50 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 		close(fd);
-    return (0);
+	return (0);
 }
