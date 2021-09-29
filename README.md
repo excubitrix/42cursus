@@ -2,9 +2,9 @@
 
 ###### [🚀 Dynamically generated badge by badge42](https://github.com/JaeSeoKim/badge42)
 
-# Project List
-## Common Core
-| PROJECT | LANGUAGE |
-| ================ | ======== |
-| [Libft](./Libft) | C        |
-| []() | C |
+## Project List
+### Common Core
+| | PROJECT | LANGUAGE |
+| | ================ | ======== |
+| | [Libft](./Libft) | C        |
+| | []() | C |
