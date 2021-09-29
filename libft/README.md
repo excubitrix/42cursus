@@ -1,4 +1,4 @@
-# :large_orange_diamond: libft &nbsp; &nbsp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)](https://github.com/JaeSeoKim/badge42)
+# :large_orange_diamond: libft &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)](https://github.com/JaeSeoKim/badge42)
 
 This is the very first project of the 2019 42cursus. Its aim is to code a C library that contains an extract of useful standard library functions.
 
@@ -23,3 +23,4 @@ for a library including all functions.
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
 ### README.md
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
