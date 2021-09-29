@@ -6,13 +6,14 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/06 09:42:35 by floogman          #+#    #+#              #
-#    Updated: 2021/09/28 12:57:01 by floogman         ###   ########.fr        #
+#    Updated: 2021/09/29 11:44:11 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 BONUS = $(BNSDIR)bonus.a
-FLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 OPTIONS = -I $(INCDIR) -c
 
 INCDIR = ./includes/
@@ -84,7 +85,7 @@ $(NAME): $(OBJDIR) $(OBJS) $(INCS)
 	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCS)
-	gcc $(FLAGS) $(OPTIONS) -o $@ $<
+	$(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
 
 $(OBJDIR):
 	@ mkdir -p $(OBJDIR)
@@ -98,7 +99,7 @@ $(BONUS): $(OBJDIR) $(OBJS) $(BNSOBJS) $(INCS)
 	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(BNSDIR)%.c $(INCS)
-	gcc $(FLAGS) $(OPTIONS) -o $@ $<
+	$(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
 
 # MISC
 clean:
