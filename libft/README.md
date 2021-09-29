@@ -2,7 +2,7 @@
 
 This is the very first project of the 2019 42cursus. Its aim is to code a C library that contains an extract of useful standard library functions.
 
-[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/libft)](https://github.com/JaeSeoKim/badge42)
+[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)](https://github.com/JaeSeoKim/badge42)
 
 ## :small_orange_diamond: Instructions
 
