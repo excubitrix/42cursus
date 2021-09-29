@@ -1,2 +1,3 @@
 # 42cursus
-A collection of projects completed during my time at 19 Coding School.
+
+[![jaeskim's 42 stats](https://badge42.herokuapp.com/api/stats/floogman?darkmode=true)](https://github.com/JaeSeoKim/badge42)
