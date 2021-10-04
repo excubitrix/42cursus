@@ -6,13 +6,14 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 08:31:53 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 15:50:12 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/04 18:08:05 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "libft.h"
 # include <stdarg.h>
 # include <wchar.h>
 # include <ctype.h>
@@ -32,8 +33,7 @@ typedef struct s_tab
 	char		flag[6];
 	char		modi[4];
 	char		*conv_mask;
-	// char		*conv_str[12];
-	int			(*conv_ptr[12])(struct s_tab *);
+	int			(*conv_ptr[13])(struct s_tab *);
 	char		*modis;
 	long double	g;
 }				t_tab;
@@ -77,7 +77,6 @@ int				padding(t_tab *tab, char c, int len, int update);
 int				pre_padding(t_tab *tab, int len);
 
 void			reinit_tab(t_tab *tab);
-void			init_conv_ptrs(t_tab *tab);
 void			init_tab(t_tab *tab, const char *format);
 
 int				trim_zeros(t_tab *tab, char *tmp, uintmax_t *i);

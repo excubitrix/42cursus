@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2021/04/30 14:42:23 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/04 19:22:35 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ static int	do_f(t_tab *tab, long double f, int tens, char *prefix)
 	return (SUCCESS);
 }
 
-static int	get_tens(t_tab *tab, long double f)
+static int	get_tens_f(t_tab *tab, long double f)
 {
 	int		tens;
 	long	tmp;
 
 	tens = 1;
-	tmp = (long)f;
+	tmp = (long)(f + 0.5);
 	if (tmp == LONG_MIN)
 		tmp = LONG_MAX;
 	if (tmp >= 1)
@@ -123,7 +123,7 @@ int	conv_f(t_tab *tab)
 		f = -f;
 	if (tab->prec < 0)
 		tab->prec = 6;
-	if (do_f(tab, f, get_tens(tab, f), prefix) != SUCCESS)
+	if (do_f(tab, f, get_tens_f(tab, f), prefix) != SUCCESS)
 		return (FAILURE);
 	return (SUCCESS);
 }

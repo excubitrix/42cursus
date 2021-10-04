@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:03:05 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 13:01:00 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/04 18:09:51 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	parser(t_tab *tab, int counter)
 			reinit_tab(tab);
 			i = -1;
 				// if (!ft_strncmp(&tab->spec, tab->conv_str[i], 1))
-			while (++i < 12)
+			while (++i < 13)
 				if (!ft_strncmp(&tab->spec, &tab->conv_mask[i], 1))
 					if (tab->conv_ptr[i](tab) != SUCCESS)
 						return (FAILURE);

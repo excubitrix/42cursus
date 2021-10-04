@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:20:44 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 11:39:23 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/04 19:22:58 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,10 @@ static int	do_e(t_tab *tab, long double e, int tens, char *prefix)
 	return (SUCCESS);
 }
 
-static int	get_tens(long double *e)
+static int	get_tens_e(long double *e)
 {
-	int		tens;
+	long double	rnd;
+	int			tens;
 
 	tens = 0;
 	if (*e < 1)
@@ -98,9 +99,13 @@ static int	get_tens(long double *e)
 	}
 	else
 	{
-		while (*e >= 10)
+		rnd = 0.5;
+		while (*e + rnd >= 10)
+		{
 			if (++tens)
 				*e /= 10;
+			rnd /= 10;
+		}
 	}
 	return (tens);
 }
@@ -119,7 +124,7 @@ int	conv_e(t_tab *tab)
 		e = -e;
 	if (tab->prec < 0)
 		tab->prec = 6;
-	tens = get_tens(&e);
+	tens = get_tens_e(&e);
 	if (do_e(tab, e, tens, prefix) != SUCCESS)
 		return (FAILURE);
 	return (SUCCESS);
