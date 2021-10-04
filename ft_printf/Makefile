@@ -6,75 +6,109 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/04 09:39:43 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/04 12:54:41 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libgnl.a
-BONUS = $(BNSDIR)libbns.a
+NAME = libftprintf.a
+BONUS = libbnsprintf.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-# BUFFER_SIZE *-------------------------------------
-VAR = -D BUFFER_SIZE=32
-# *-------------------------------------------------
-OPTIONS = $(VAR) -c
+OPTIONS = -I$(INCDIR) -c
 
-INC = get_next_line.h
-INCS = $(addprefix $(SRCDIR), $(INC))
+LIBDIR = ../Libft/
+LIBFT = libft.a
 
 SRCDIR = ./
 SRC = \
-	get_next_line.c \
-	get_next_line_utils.c
+	conv_e.c \
+	conv_f.c \
+	conv_png.c \
+	utils.c
+
+SHRD = \
+	conv_cs.c \
+	conv_di.c \
+	conv_ux.c \
+	conv_ws.c \
+	display_wchar.c \
+	ft_itoa_base.c \
+	ft_printf.c \
+	ft_strndup.c \
+	get.c \
+	padding.c \
+	tab.c
 
 OBJDIR = ./obj/
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o) $(SHRD:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
+INCDIR = ./
+INC = ft_printf.h
+INCS = $(addprefix $(INCDIR), $(INC))
+
 # BONUS
-BNSINC = get_next_line_bonus.h
-BNSINCS = $(addprefix $(BNSDIR), $(BNSINC))
-
-BNSDIR = ./bonus/
+BNSDIR = ./
 BNS = \
-	get_next_line_bonus.c \
-	get_next_line_utils_bonus.c
+	conv_e_bonus.c \
+	conv_f_bonus.c \
+	conv_png_bonus.c \
+	utils_bonus.c
 
-BNSOBJ = $(BNS:.c=.o)
+BNSOBJ = $(BNS:.c=.o) $(SHRD:.c=.o)
 BNSOBJS = $(addprefix $(OBJDIR), $(BNSOBJ))
+
+BNSINC = ft_printf_bonus.h
+BNSINCS = $(addprefix $(INCDIR), $(BNSINC))
 
 # RULES *-------------------------------------------
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJS) $(INCS)
+$(NAME): $(LIBFT) $(OBJDIR) $(OBJS) $(INCS)
+	cp $(LIBFT) $(NAME)
 	ar -rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCS)
-	$(CC) $(CFLAGS) -I$(SRCDIR) $(OPTIONS) -o $@ $<
+	$(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
 
 $(OBJDIR):
 	@ mkdir -p $(OBJDIR)
 
+# LIBFT
+$(LIBFT): $(LIBDIR)$(LIBFT)
+	cp $(LIBDIR)$(LIBFT) .
+
+$(LIBDIR)$(LIBFT):
+	$(MAKE) -C $(LIBDIR)
+
 # BONUS
 bonus: $(BONUS)
 
-$(BONUS): $(OBJDIR) $(BNSOBJS) $(BNSINCS)
+$(BONUS): $(LIBFT) $(OBJDIR) $(BNSOBJS) $(BNSINCS)
+	cp $(LIBFT) $(BONUS)
 	ar -rc $(BONUS) $(BNSOBJS)
 	ranlib $(BONUS)
 	cp $(BONUS) $(NAME)
 
 $(OBJDIR)%.o: $(BNSDIR)%.c $(BNSINCS)
-	$(CC) $(CFLAGS) -I$(BNSDIR) $(OPTIONS) -o $@ $<
+	$(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
+
+# DEBUG
+debug: $(LIBFT) $(OBJDIR) $(OBJS) $(INCS)
+	$(CC) $(CFLAGS) -g -L. -lft -I. $(OBJS) main.c
+# $(CC) $(CFLAGS) -g -L. -lftprintf main.c
 
 # MISC
 clean:
+	$(MAKE) -C $(LIBDIR) clean
 	/bin/rm -rf $(OBJDIR)
 
 fclean: clean
+	$(MAKE) -C $(LIBDIR) fclean
 	/bin/rm -f $(NAME) $(BONUS)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all test bonus clean fclean re

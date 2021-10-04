@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/06 09:42:35 by floogman          #+#    #+#              #
-#    Updated: 2021/09/29 13:50:55 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/04 09:46:50 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,9 +93,8 @@ $(OBJDIR):
 # BONUS
 bonus: $(BONUS)
 
-$(BONUS): $(OBJDIR) $(OBJS) $(BNSOBJS) $(INCS)
-	@ ar -rc $(BONUS) $(BNSOBJS)
-	ar -rc $(NAME) $(OBJS) $(BNSOBJS)
+$(BONUS): $(NAME) $(BNSOBJS)
+	ar -rc $(NAME) $(BNSOBJS)
 	ranlib $(NAME)
 
 $(OBJDIR)%.o: $(BNSDIR)%.c $(INCS)
@@ -103,7 +102,7 @@ $(OBJDIR)%.o: $(BNSDIR)%.c $(INCS)
 
 # MISC
 clean:
-	/bin/rm -f $(OBJDIR)
+	/bin/rm -rf $(OBJDIR)
 
 fclean: clean
 	/bin/rm -f $(NAME)
