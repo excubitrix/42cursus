@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:20:44 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 19:22:58 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:45:29 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*add_suffix(char *nbr, int len, int tens)
 {
 	char	*new;
 
-	new = ft_calloc(sizeof(char), len + 1);
+	new = ft_calloc(len + 1, sizeof(char));
 	if (!new)
 	{
 		free(nbr);

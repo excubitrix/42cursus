@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:05:40 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 13:00:19 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:36:42 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,40 +36,24 @@ void	reinit_tab(t_tab *tab)
 	}
 }
 
-void	init_conv_ptrs(t_tab *tab)
-{
-	// tab->conv_str[0] = "c";
-	// tab->conv_str[1] = "s";
-	// tab->conv_str[2] = "p";
-	// tab->conv_str[3] = "d";
-	// tab->conv_str[4] = "u";
-	// tab->conv_str[5] = "x";
-	// tab->conv_str[6] = "X";
-	// tab->conv_str[7] = "%";
-	// tab->conv_str[8] = "n";
-	// tab->conv_str[9] = "f";
-	// tab->conv_str[10] = "g";
-	// tab->conv_str[11] = "e";
-	tab->conv_ptr[0] = &conv_c;
-	tab->conv_ptr[1] = &conv_s;
-	tab->conv_ptr[2] = &conv_p;
-	tab->conv_ptr[3] = &conv_d;
-	tab->conv_ptr[4] = &conv_u;
-	tab->conv_ptr[5] = &conv_x;
-	tab->conv_ptr[6] = &conv_x;
-	tab->conv_ptr[7] = &display_mod;
-	tab->conv_ptr[8] = &conv_n;
-	tab->conv_ptr[9] = &conv_f;
-	tab->conv_ptr[10] = &conv_g;
-	tab->conv_ptr[11] = &conv_e;
-}
-
 void	init_tab(t_tab *tab, const char *format)
 {
 	tab->f = format;
 	tab->len = 0;
 	tab->i = 0;
 	tab->conv_mask = "cspdiuxX%nfge";
-	init_conv_ptrs(tab);
+	tab->conv_ptr[0] = &conv_c;
+	tab->conv_ptr[1] = &conv_s;
+	tab->conv_ptr[2] = &conv_p;
+	tab->conv_ptr[3] = &conv_d;
+	tab->conv_ptr[4] = &conv_d;
+	tab->conv_ptr[5] = &conv_u;
+	tab->conv_ptr[6] = &conv_x;
+	tab->conv_ptr[7] = &conv_x;
+	tab->conv_ptr[8] = &display_mod;
+	tab->conv_ptr[9] = &conv_n;
+	tab->conv_ptr[10] = &conv_f;
+	tab->conv_ptr[11] = &conv_g;
+	tab->conv_ptr[12] = &conv_e;
 	tab->modis = "lh";
 }

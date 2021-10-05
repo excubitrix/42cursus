@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:27:21 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 18:44:28 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:42:52 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	conv_p(t_tab *tab)
 	s = ft_itoa_base((uintmax_t)p, "0123456789abcdef", 16);
 	if (!s)
 		return (FAILURE);
-	if (tab->prec == 0 && p == 0)
+	if (!tab->prec && !p)
 		*s = '\0';
 	s_len = ft_strlen(s);
 	len = s_len + 2;
@@ -97,9 +97,10 @@ int	conv_g(t_tab *tab)
 	tens = 0;
 	prec = get_tens_g(tab, &tens, g_cpy, 0.5);
 	if ((tens < -4) || ((tens - 1) >= tab->prec))
+	{
 		tab->prec = prec - 1;
-	if ((tens < -4) || ((tens - 1) >= tab->prec))
 		conv_e(tab);
+	}
 	else
 		conv_f(tab);
 	return (SUCCESS);
