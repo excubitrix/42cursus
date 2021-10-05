@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 12:07:13 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 10:56:16 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:25:18 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	conv_c(t_tab *tab)
 {
 	wint_t	c;
 
-	if (ft_strncmp(tab->modi, "l", ft_strlen(tab->modi) + 1) == 0)
+	if (!ft_strncmp(tab->modi, "l", 2))
 	{
 		c = (wchar_t)va_arg(tab->ap, wchar_t);
 		display_wchar(tab, c);
@@ -48,7 +48,7 @@ int	conv_s(t_tab *tab)
 {
 	char	*s;
 
-	if (!ft_strncmp(tab->modi, "l", ft_strlen(tab->modi) + 1))
+	if (!ft_strncmp(tab->modi, "l", 2))
 		return (conv_ws(tab));
 	s = va_arg(tab->ap, char *);
 	if (tab->prec > -1 && s)

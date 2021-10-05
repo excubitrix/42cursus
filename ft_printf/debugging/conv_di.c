@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:45:59 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 11:39:26 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:42:41 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	conv_d(t_tab *tab)
 	intmax_t	n;
 
 	n = get_nbr(tab);
-	if (n == 0 && tab->prec == 0)
+	if (!n && !tab->prec)
 	{
 		if (tab->flag[1] || tab->flag[2])
 			display_signed(tab, get_sign(tab, n < 0));

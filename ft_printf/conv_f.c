@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2021/04/30 14:42:23 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:44:37 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	display_f(t_tab *tab, char *nbr, char *prefix)
 {
 	int		len;
 
-	len = ft_strlen(nbr) + (prefix != NULL);
+	len = ft_strlen(nbr) + (prefix);
 	if (prefix && tab->flag[3])
 		write(1, prefix, 1);
 	if (!tab->flag[0])
 		pre_padding(tab, len);
 	if (prefix && !tab->flag[3])
 		write(1, prefix, 1);
-	write(1, nbr, len - (prefix != NULL));
+	write(1, nbr, len - (prefix));
 	tab->len += len;
 	if (tab->flag[0])
 		padding(tab, ' ', tab->width - len, 1);
@@ -35,7 +35,7 @@ char	*get_double(t_tab *tab, long double *d, uintmax_t *i, int k)
 	uintmax_t	prec;
 	char		*tmp;
 
-	tmp = ft_calloc(sizeof(char), (*i + 1));
+	tmp = ft_calloc((*i + 1), sizeof(char));
 	if (!tmp)
 		return (NULL);
 	prec = (uintmax_t)tab->prec;
@@ -93,7 +93,7 @@ static int	get_tens(t_tab *tab, long double f)
 	long	tmp;
 
 	tens = 1;
-	tmp = (long)f;
+	tmp = (long)(f + 0.5);
 	if (tmp == LONG_MIN)
 		tmp = LONG_MAX;
 	if (tmp >= 1)

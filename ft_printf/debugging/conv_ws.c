@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 09:44:10 by floogman          #+#    #+#             */
-/*   Updated: 2021/04/26 19:32:19 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:45:47 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static wchar_t	*wstrdup(wchar_t *str)
 	n = 0;
 	while (str[n])
 		n++;
-	new = (wchar_t *)malloc(sizeof(wchar_t) * (n + 1));
+	new = malloc((n + 1) * sizeof(wchar_t));
 	if (!new)
 		return (NULL);
 	i = 0;

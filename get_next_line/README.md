@@ -1,6 +1,6 @@
 # :large_orange_diamond: get_next_line &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)](https://github.com/JaeSeoKim/badge42)
 
-The aim of this project is to code a function that returns a line ending with a newline, read from a file descriptor.
+The aim of this project is to learn about static variables by coding a getline-esque function that returns a line ending with a newline, read from a file descriptor.
 
 ## :small_orange_diamond: Instructions
 
@@ -27,6 +27,9 @@ To test the bonus version, add the `-b` flag.
 ```
 
 ## :small_orange_diamond: Resources
+- [Static Variables In C](https://www.geeksforgeeks.org/static-variables-in-c/)
+### ar
+- [Create or Maintain Library Archives](https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-ar-create-maintain-library-archives)
 ### GCC
 - [-D Option Flag](https://www.rapidtables.com/code/linux/gcc/gcc-d.html)
 - [-L / -l Option Flags](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)

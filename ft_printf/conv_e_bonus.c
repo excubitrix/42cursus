@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:20:44 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 11:39:20 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:44:08 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*add_suffix(char *nbr, int len, int tens)
 {
 	char	*new;
 
-	new = ft_calloc(sizeof(char), len + 1);
+	new = ft_calloc(len + 1, sizeof(char));
 	if (!new)
 	{
 		free(nbr);
@@ -64,7 +64,6 @@ static int	do_e(t_tab *tab, long double e, int tens, char *prefix)
 {
 	uintmax_t	i;
 	int			k;
-	// int			h;
 	uintmax_t	prec;
 	char		*tmp;
 
@@ -88,7 +87,8 @@ static int	do_e(t_tab *tab, long double e, int tens, char *prefix)
 
 static int	get_tens(long double *e)
 {
-	int		tens;
+	long double	rnd;
+	int			tens;
 
 	tens = 0;
 	if (*e < 1)
@@ -99,9 +99,13 @@ static int	get_tens(long double *e)
 	}
 	else
 	{
-		while (*e >= 10)
+		rnd = 0.5;
+		while (*e + rnd >= 10)
+		{
 			if (++tens)
 				*e /= 10;
+			rnd /= 10;
+		}
 	}
 	return (tens);
 }

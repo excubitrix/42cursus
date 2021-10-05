@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 12:40:42 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/04 11:06:03 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/05 08:45:18 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_itoa_base(uintmax_t nbr, char *base, int base_size)
 
 	n_cpy = nbr;
 	len = 0;
-	if (nbr == 0)
+	if (!nbr)
 		len = 1;
 	while (nbr > 0)
 	{
