@@ -35,7 +35,6 @@ Class | Netmask Length | # of Networks | # of Hosts | Netmask
 **A** | 8 | 126 | 16,777,214 | 255.0.0.0
 **B** | 16 | 16,382 | 65,534 | 255.255.0.0
 **C** | 24 | 2,097,150 | 254 | 255.255.255.0
-<br>
 
 ### What is the subnet of an IP with Netmask?
 ***A subnet is the result of a Netmask being used to divide an IP address into two parts.***<br>
@@ -57,7 +56,6 @@ octet | 1st | 2nd | 3rd | 4th
 decimal | 192. | 168. | 123. | 132
 | | 128 + 64 | 128 + 32 + 8 | 64 + 32 + 16 + 8 + 2 + 1 | 128 + 4
 binary | 11000000. | 10101000. | 01111011. | 10000100
-<br>
 
 ### Lining Up IP Address and Netmask
 
@@ -78,7 +76,6 @@ The main difference between public and private IP addresses is how far they reac
 |10.0.0.0 - 10.255.255.255|
 |172.16.0.0 - 172.31.255.255|
 |192.168.0.0 - 192.168.255.255|
-<br>
 
 ### TCP vs. UDP
 `TCP` (transmission control protocol) and `UDP` (user datagram protocol) are `internet protocols` that transfer data. More specifically, TCP and UDP are both communication protocols and fall within the `transport layer` of the `OSI model`.<br>
