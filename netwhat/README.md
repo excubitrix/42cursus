@@ -4,11 +4,11 @@ This project is an introduction to network problematics.
 
 ## :small_orange_diamond: Notes
 ### What is an IP address?
-An IP address is a unique address that identifies a device on the internet or a local network. IP stands for `"Internet Protocol"`, which is a set of rules governing the format of data sent via the internet or local network.<br>
+An IP address is a 32 bits (IPv4) unique address that identifies a device on the internet or a local network. IP stands for `"Internet Protocol"`, which is a set of rules governing the format of data sent via the internet or local network.<br>
 IP addresses are normally expressed in `dotted-decimal` notation, with four numbers (or `octets`) separated by periods, such as 192.168.123.132.<br>
 Each number can range from `0 to 255` and the full IP addressing range goes from `0.0.0.0 to 255.255.255.255`.<br><br>
 
-### IPv4 Classes
+### Network Classes
 IP addresses are divided into `classes`. The most common of them are classes `A`, `B`, and `C`. Classes D and E exist, but aren't used by end users. Each of the address classes has a different `default Netmask`. You can identify the class of an IP address by looking at its first octet.
 
 Class | Leading Bits (Binary Notation) | Range | Netmask
@@ -26,7 +26,9 @@ A simple formula can determine the `amount of networks` a netmask can support:
 > 2^(netmask length - # of used segments) - 2
 
 To determine the `number of hosts` a netmask is capable of supporting, use the following formula:
-> 2^(# of zeroes) - 2<br>
+> 2^(# of zeroes) - 2
+
+<br>
 
 Class | Netmask Length | # of Networks | # of Hosts | Netmask
 :----:|:--------------:|:-------------:|:----------:|:-------:
@@ -40,7 +42,7 @@ Class | Netmask Length | # of Networks | # of Hosts | Netmask
 One part identifies the `host` (computer), the other part identifies the `network` to which it belongs.<br><br>
 Converting an IP address into `binary notation` and lining it up with its corresponding `Netmask`, the network, and host portions of the address can be separated by performing a `bitwise AND` operation.<br>
 
-#### Converting Dotted-decimal To Binary Notation
+### Converting Dotted-decimal To Binary Notation
 Each number in dotted-decimal notation represents an `octet` in `binary notation`. One octet consists of `8 bits` and each bit has the value of `2^n`. The rightmost (8th) has the value 2^0 and the leftmost (1st) has the value 2^7.
 
 bit | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th
@@ -57,7 +59,7 @@ decimal | 192. | 168. | 123. | 132
 binary | 11000000. | 10101000. | 01111011. | 10000100
 <br>
 
-#### Lining Up IP Address and Netmask
+### Lining Up IP Address and Netmask
 
 11000000.10101000.01111011.10000100 - 192.168.123.132 (IP address)<br>
 11111111.11111111.11111111.00000000 - 255.255.255.0 (Netmask)
@@ -67,62 +69,61 @@ In the example above, the IP address is of class C (note the leading bits). Ther
 11000000.10101000.01111011.00000000 - 192.168.123.0 (Network address)<br>
 00000000.00000000.00000000.10000100 - 000.000.000.132 (Host address)
 
+### Public and Private IPs
+The main difference between public and private IP addresses is how far they reach, and what they’re connected to. A `public IP` address identifies you to the wider `internet` so that all the information you’re searching for can find you. A `private IP` address is used within a `private network` to connect securely to other devices within that same network.<br>
+<br>
 
-
-
-
-
-### CIDR to Binary to Dotted-Decimal Notation:
-
-CIDR | Binary | Dotted-decimal
-:---:|:------:|:--------------:
-... | ... | ...
-/8 | 11111111.00000000.00000000.00000000 | 255.0.0.0
-/9 | 11111111.10000000.00000000.00000000 | 255.128.0.0
-/10 | 11111111.11000000.00000000.00000000 | 255.192.0.0
-/11 | 11111111.11100000.00000000.00000000 | 255.224.0.0
-/12 | 11111111.11110000.00000000.00000000 | 255.240.0.0
-/13 | 11111111.11111000.00000000.00000000 | 255.248.0.0
-/14 | 11111111.11111100.00000000.00000000 | 255.252.0.0
-/15 | 11111111.11111110.00000000.00000000 | 255.254.0.0
-/16 | 11111111.11111111.00000000.00000000 | 255.255.0.0
-... | ... | ...
-
-### Private IPv4 Addresses:
-- 10.0.0.0 - 10.255.255.255
-- 172.16.0.0 - 172.31.255.255
-- 192.168.0.0 - 192.168.255.255
-
-### OSI Model
-Levels:<br>
-Application -> Presentation -> Session -> Transport -> Network -> Data Link -> Physical
-
-- DHCP uses UDP at the Transport (4th) level
+|Private IPv4 Address Ranges|
+|:----:|
+|10.0.0.0 - 10.255.255.255|
+|172.16.0.0 - 172.31.255.255|
+|192.168.0.0 - 192.168.255.255|
+<br>
 
 ### TCP vs. UDP
-
+`TCP` (transmission control protocol) and `UDP` (user datagram protocol) are `internet protocols` that transfer data. More specifically, TCP and UDP are both communication protocols and fall within the `transport layer` of the `OSI model`.<br>
+A list of key differences between the two:<br>
 TCP | UDP
 :---:|:---:
 connection-oriented | datagram-oriented
-reliable, ordered, and error-checked delivery of packages | unreliable delivery of packages
+reliable, ordered, and error-checked delivery of packets | unreliable delivery of packets
 slow | fast
 does not support broadcasting | supports broadcasting
+<br>
 
-TCP is *slower* than UDP **but** more *reliable*.
+In summary: TCP is *slower* than UDP **but** more *reliable*.
 
-### Miscellaneous
-- DHCP supports both IPv4 and IPv6
-- an IPv4 address has a size of 32 bits
-- an IPv6 address has a size of 128 bits
-- Ping uses ICMP (internet control message protocol)
-- C is the default IP address class available
+### OSI Model
+The `OSI model` serves as the vertical framework and standards that guide how information exchanges among cumputing systems. The seven layers of the OSI model are:
+1. Physical (lowest)
+2. Data Link
+3. Network
+4. Transport
+5. Session
+6. Presentation
+7. Application (highest)
+
+## TO DO
+### DHCP
+### DNS
+### ROUTING
+### DEFAULT GATEWAY
+### PORT from IP's POV
+
+## Unassigned
+- `DHCP` uses `UDP` at the transport layer
+- `DHCP` supports both `IPv4` and `IPv6`
+- an `IPv4 address` has a size of `32 bits`
+- an `IPv6 address` has a size of `128 bits`
+- `Ping` uses `ICMP` (internet control message protocol)
+- `C` is the `default IP address class` available
 
 ## :small_orange_diamond: Resources
 - [IP Address - Definition and Explanation](https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address)
 - [Netmask](https://www.computerhope.com/jargon/n/netmask.htm)
 - [Understanding TCP/IP Addressing and Subnetting Basics](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting)
 - [Guide To Subnetting](https://www.softwaretestinghelp.com/subnet-mask-and-network-classes/)
-
+- [TCP vs UDP](https://sectigostore.com/blog/tcp-vs-udp-whats-the-difference/)
 ### Practice
 - [Netwhat Trainer](https://github.com/adblanc/netwhat42-train)
 - [Netwhat Trainer (py)](https://github.com/abdlalisalmi/netwhat-trainer)
