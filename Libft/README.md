@@ -1,6 +1,6 @@
 # :large_orange_diamond: Libft &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)](https://github.com/JaeSeoKim/badge42)
 
-This is the very first project of the 2019 42cursus. Its aim is to code a C library that contains an extract of useful standard library functions.
+This is the very first project of the 2019 42cursus. Its aim is to become familiar with and understand an extract of useful standard library functions by coding our own C library.
 
 ## :small_orange_diamond: Instructions
 
