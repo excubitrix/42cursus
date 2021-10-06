@@ -1,4 +1,4 @@
-# :large_orange_diamond: get_next_line &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)](https://github.com/JaeSeoKim/badge42)
+# :large_orange_diamond: get_next_line &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)
 
 The aim of this project is to learn about static variables by coding a getline-esque function that returns a line ending with a newline, read from a file descriptor.
 

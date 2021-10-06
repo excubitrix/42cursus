@@ -1,4 +1,4 @@
-# :large_orange_diamond: netwhat &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/netwhat)](https://github.com/JaeSeoKim/badge42)
+# :large_orange_diamond: netwhat &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/netwhat)
 
 This project is an introduction to network problematics.
 

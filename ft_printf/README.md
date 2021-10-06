@@ -1,4 +1,4 @@
- # :large_orange_diamond: ft_printf &ensp; [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)](https://github.com/JaeSeoKim/badge42)
+ # :large_orange_diamond: ft_printf &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)
 
 The aim of this project is to learn about variadic functions by coding a simplified printf.
 
