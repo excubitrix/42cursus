@@ -4,19 +4,19 @@
 
 ## Project List
 ### Common Core
-| CIRCLE | PROJECT | LANGUAGE |
-| ------ | ------- | -------- |
-| 00 | [Libft](./Libft) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 01 | [get_next_line](./get_next_line) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 01 | [ft_printf](./ft_printf) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 01 | [netwhat](./netwhat) |  |
-| 02 | [cub3d](./cub3d) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 02 | [ft_server](./ft_server) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-plain.svg" alt="docker" width="40" height="40"/> |
-| 03 | [libasm](./libasm) | <img src="https://user-images.githubusercontent.com/59726559/135809308-9b1e2e09-58d2-4824-ab51-acc101845a57.png" alt="assembly" widht="40" height="40"/> |
-| 03 | [ft_services](./ft_services) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="kubernetes" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-plain.svg" alt="docker" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-plain.svg" alt="bash" width="40" height="40"/> |
-| 03 | [minishell](./minishell) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 03 | [push_swap](./push_swap) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 04 | [philosophers](./philosophers) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> |
-| 04 | [CPP Modules (9)](./CPP_Modules) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> |
-| 05 | [webserv](./webserv) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> |
-| 05 | [ft_containers](./ft_containers) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> |
+CIRCLE | PROJECT | LANGUAGE | SCORE
+:-----:|:-------:|:--------:|:-----:
+00 | [Libft](./Libft) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)](https://github.com/JaeSeoKim/badge42)
+01 | [get_next_line](./get_next_line) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)](https://github.com/JaeSeoKim/badge42)
+01 | [ft_printf](./ft_printf) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)](https://github.com/JaeSeoKim/badge42)
+01 | [netwhat](./netwhat) |  | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/netwhat)](https://github.com/JaeSeoKim/badge42)
+02 | [cub3d](./cub3d) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/cub3d)](https://github.com/JaeSeoKim/badge42)
+02 | [ft_server](./ft_server) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-plain.svg" alt="docker" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_server)](https://github.com/JaeSeoKim/badge42)
+03 | [libasm](./libasm) | <img src="https://user-images.githubusercontent.com/59726559/135809308-9b1e2e09-58d2-4824-ab51-acc101845a57.png" alt="assembly" widht="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/libasm)](https://github.com/JaeSeoKim/badge42)
+03 | [ft_services](./ft_services) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="kubernetes" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-plain.svg" alt="docker" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-plain.svg" alt="bash" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_services)](https://github.com/JaeSeoKim/badge42)
+03 | [minishell](./minishell) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/minishell)](https://github.com/JaeSeoKim/badge42)
+03 | [push_swap](./push_swap) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/push_swap)](https://github.com/JaeSeoKim/badge42)
+04 | [Philosophers](./philosophers) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-plain.svg" alt="c" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/Philosophers)](https://github.com/JaeSeoKim/badge42)
+04 | [CPP Modules (9)](./CPP_Modules) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2008)](https://github.com/JaeSeoKim/badge42)
+05 | [webserv](./webserv) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/webserv)](https://github.com/JaeSeoKim/badge42)
+05 | [ft_containers](./ft_containers) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | [![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_containers)](https://github.com/JaeSeoKim/badge42)
