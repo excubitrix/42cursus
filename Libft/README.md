@@ -12,6 +12,8 @@ This is the very first project of the 2019 42cursus. Its aim is to become famili
 gcc -Wall -Wextra -Werror -L. -lft main.c
 ```
 
+![gif](https://user-images.githubusercontent.com/59726559/136149622-2b8ee579-49fd-40c0-a237-057e7d93ca6e.gif)
+
 ## :small_orange_diamond: Resources
 - [Linux Man Pages](https://linux.die.net/man/)
 ### ar

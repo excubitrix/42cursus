@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/06 09:42:35 by floogman          #+#    #+#              #
-#    Updated: 2021/10/04 09:46:50 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/06 07:51:13 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ $(OBJDIR):
 bonus: $(BONUS)
 
 $(BONUS): $(NAME) $(BNSOBJS)
+	@ ar -rc $(BONUS) $(BNSOBJS)
 	ar -rc $(NAME) $(BNSOBJS)
 	ranlib $(NAME)
 
@@ -105,8 +106,7 @@ clean:
 	/bin/rm -rf $(OBJDIR)
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	@ /bin/rm -rf $(BONUS)
+	/bin/rm -f $(NAME) $(BONUS)
 
 re: fclean all
 
