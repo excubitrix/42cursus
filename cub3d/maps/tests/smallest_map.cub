@@ -1,0 +1,12 @@
+R 800 600
+NO ./imgs/bluestone.xpm
+SO ./imgs/colorstone.xpm
+WE ./imgs/mossy.xpm  
+EA ./imgs/eagle.xpm
+S ./imgs/barrel.xpm
+F 255,175,125
+C 125,125,255
+
+   1
+  1S1
+   1
