@@ -4,13 +4,17 @@ The aim of this project is to learn about static variables by coding a getline-e
 
 ## :small_orange_diamond: Instructions
 
-1. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
+1. (optional) Change the size of the buffer in the Makefile.
 
-2. Link the resulting library `libgnl.a` using the `-L`/`-l` flags.
+2. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
+
+3. Link the resulting library `libgnl.a` using the `-L`/`-l` flags.
 
 ```
 gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ```
+
+![make_gnl](https://user-images.githubusercontent.com/59726559/136177671-910b8978-6e39-4d64-b7f0-ba9cb61a809a.gif)
 
 ## :small_orange_diamond: Tester
 
