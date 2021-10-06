@@ -26,21 +26,26 @@ To test the bonus version, add the `-b` flag.
 ./tests/tester.sh -b
 ```
 
+![gnl_tester](https://user-images.githubusercontent.com/59726559/136174280-9fb42087-0f56-4d66-8d58-fd42a4dabeea.gif)
+
 ## :small_orange_diamond: Resources
 - [Static Variables In C](https://www.geeksforgeeks.org/static-variables-in-c/)
-### ar
+#### ar
 - [Create or Maintain Library Archives](https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-ar-create-maintain-library-archives)
-### GCC
+#### GCC
 - [-D Option Flag](https://www.rapidtables.com/code/linux/gcc/gcc-d.html)
 - [-L / -l Option Flags](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)
-### Makefile
+#### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
     - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
-### Bash Scripting
-- [Cheatsheet](https://devhints.io/bash)
-### README.md
+#### Tester
+- [Bash Scripting Cheatsheet](https://devhints.io/bash)
+- [Check Emoji](https://emojipedia.org/check-mark-button/)
+- [Cross Emoji](https://emojipedia.org/cross-mark/)
+- [Ascii Art](https://www.asciiart.eu/animals/other-land)
+#### README.md
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-### ProjectScore Badge
+#### ProjectScore Badge
 - [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)

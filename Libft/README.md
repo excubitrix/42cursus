@@ -12,20 +12,20 @@ This is the very first project of the 2019 42cursus. Its aim is to become famili
 gcc -Wall -Wextra -Werror -L. -lft main.c
 ```
 
-![gif](https://user-images.githubusercontent.com/59726559/136149622-2b8ee579-49fd-40c0-a237-057e7d93ca6e.gif)
+![make_libft](https://user-images.githubusercontent.com/59726559/136149622-2b8ee579-49fd-40c0-a237-057e7d93ca6e.gif)
 
 ## :small_orange_diamond: Resources
 - [Linux Man Pages](https://linux.die.net/man/)
-### ar
+#### ar
 - [Create or Maintain Library Archives](https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-ar-create-maintain-library-archives)
-### GCC
+#### GCC
 - [-L / -l Option Flags](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)
-### Makefile
+#### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
     - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
-### README.md
+#### README.md
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-### ProjectScore Badge
+#### ProjectScore Badge
 - [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)

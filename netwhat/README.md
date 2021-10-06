@@ -121,11 +121,11 @@ The `OSI model` serves as the vertical framework and standards that guide how in
 - [Understanding TCP/IP Addressing and Subnetting Basics](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting)
 - [Guide To Subnetting](https://www.softwaretestinghelp.com/subnet-mask-and-network-classes/)
 - [TCP vs UDP](https://sectigostore.com/blog/tcp-vs-udp-whats-the-difference/)
-### Practice
+#### Practice
 - [Netwhat Trainer](https://github.com/adblanc/netwhat42-train)
 - [Netwhat Trainer (py)](https://github.com/abdlalisalmi/netwhat-trainer)
-### README.md
+#### README.md
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-### ProjectScore Badge
+#### ProjectScore Badge
 - [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)
