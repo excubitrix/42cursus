@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/01/23 21:39:08 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/06 12:47:09 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,55 +14,77 @@ NAME = cub3D
 LIBFT = libft.a
 LIBMLX = libmlx.a
 
-RM = /bin/rm -f
-RMDIR = /bin/rm -rf
-RES = native_res.txt
 BMP = bitmap.bmp
+RES = native_res.txt
+
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I$(MLXDIR) -I$(INCDIR) -I$(LIBDIR)
-LINKS = -L$(LIBDIR) -lft -L$(MLXDIR) -lmlx -framework OpenGL -framework AppKit
+OPTIONS = -I$(MLXDIR) -I$(INCDIR) -I$(LIBDIR) -c
+LIBS = -L$(LIBDIR) -lft -L$(MLXDIR) -lmlx -framework OpenGL -framework AppKit
 
 LIBDIR = ../libft/
 MLXDIR = ../minilibx_opengl_20191021/
 
 SRCDIR = ./srcs/
-SRCS = $(addprefix $(SRCDIR), $(SRC))
-SRC = main.c init.c parse.c parse_tools.c get_elem.c is_valid.c tools.c\
-	hooks.c floor_ceil_sky.c draw_tools.c color_tools.c movement.c bitmap.c\
-	sprites.c walls.c doors.c sound.c hud.c hud_tools.c actions.c init_plr.c\
-	wall_tools.c queue_tools.c exit_tools.c load_textures.c actions_tools.c
+SRC = \
+	actions_tools.c \
+	actions.c \
+	bitmap.c \
+	color_tools.c \
+	doors.c \
+	draw_tools.c \
+	exit_tools.c \
+	floor_ceil_sky.c \
+	get_elem.c \
+	hooks.c \
+	hud_tools.c \
+	hud.c \
+	init_plr.c \
+	init.c \
+	is_valid.c \
+	load_textures.c \
+	main.c \
+	movement.c \
+	parse_tools.c \
+	parse.c \
+	queue_tools.c \
+	sound.c \
+	sprites.c \
+	tools.c \
+	wall_tools.c \
+	walls.c
 
 OBJDIR = ./obj/
-OBJS = $(addprefix $(OBJDIR), $(OBJ))
 OBJ = $(SRC:.c=.o)
+OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
 INCDIR = ./includes/
-INCS = $(addprefix $(INCDIR), $(INC))
 INC = cub3d.h bmp.h
+INCS = $(addprefix $(INCDIR), $(INC))
 
+# RULES *-------------------------------------------
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJS)
-	@$(RM) $(BMP)
-	@$(MAKE) -C $(LIBDIR)
-	@$(MAKE) -C $(MLXDIR)
-	gcc $(CFLAGS) $(OBJS) $(LINKS) -o $(NAME)
+$(NAME): $(OBJDIR) $(OBJS) $(INCS)
+	@ $(MAKE) -C $(LIBDIR)
+	@ $(MAKE) -C $(MLXDIR)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INCS)
-	@gcc $(CFLAGS) $(INCLUDES) -c -o $@ $<
+	@ $(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
 
 $(OBJDIR):
-	@mkdir -p $(OBJDIR)
+	@ mkdir -p $(OBJDIR)
 
+# MISC
 clean:
-	$(RM) $(OBJS)
-	@$(RMDIR) $(OBJDIR)
-	@$(MAKE) -C $(LIBDIR) clean
+	rm -rf $(OBJDIR)
+	@ $(MAKE) -C $(LIBDIR) clean
 
 fclean: clean
-	$(RM) $(NAME)
-	@$(MAKE) -C $(LIBDIR) fclean
-	@$(MAKE) -C $(MLXDIR) clean
+	rm -f $(NAME) $(BMP)
+	@ $(MAKE) -C $(MLXDIR) clean
+	@ $(MAKE) -C $(LIBDIR) fclean
 
 re: fclean all
 
