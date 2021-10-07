@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/04 12:54:41 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 10:57:54 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OPTIONS = -I$(INCDIR) -c
 LIBDIR = ../Libft/
 LIBFT = libft.a
 
-SRCDIR = ./
+SRCDIR = ./srcs/
 SRC = \
 	conv_e.c \
 	conv_f.c \
@@ -44,12 +44,12 @@ OBJDIR = ./obj/
 OBJ = $(SRC:.c=.o) $(SHRD:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
-INCDIR = ./
+INCDIR = ./includes/
 INC = ft_printf.h
 INCS = $(addprefix $(INCDIR), $(INC))
 
 # BONUS
-BNSDIR = ./
+BNSDIR = ./srcs/
 BNS = \
 	conv_e_bonus.c \
 	conv_f_bonus.c \
@@ -96,9 +96,8 @@ $(OBJDIR)%.o: $(BNSDIR)%.c $(BNSINCS)
 	$(CC) $(CFLAGS) $(OPTIONS) -o $@ $<
 
 # DEBUG
-debug: $(LIBFT) $(OBJDIR) $(OBJS) $(INCS)
-	$(CC) $(CFLAGS) -g -L. -lft -I. $(OBJS) main.c
-# $(CC) $(CFLAGS) -g -L. -lftprintf main.c
+debug:
+	$(CC) $(CFLAGS) -g -I./debugging ./debugging/*.c
 
 # MISC
 clean:
@@ -107,7 +106,7 @@ clean:
 
 fclean: clean
 	$(MAKE) -C $(LIBDIR) fclean
-	/bin/rm -f $(NAME) $(BONUS)
+	/bin/rm -f $(NAME) $(BONUS) $(LIBFT)
 
 re: fclean all
 

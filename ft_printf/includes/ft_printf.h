@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 08:31:53 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 08:37:56 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:43:47 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../Libft/includes/libft.h"
+# include "../../Libft/includes/libft.h"
 # include <stdarg.h>
 # include <wchar.h>
 # include <ctype.h>
-# include <math.h>
 
 # define SUCCESS 0
 # define FAILURE 1
@@ -83,7 +82,6 @@ void			init_tab(t_tab *tab, const char *format);
 int				trim_zeros(t_tab *tab, char *tmp, uintmax_t *i);
 char			*get_sign(t_tab *tab, int is_neg);
 int				get_len(t_tab *tab, int n_len, char *prefix);
-int				display_exp(t_tab *tab, long double f);
 void			display_nbr(t_tab *tab, char *nbr, char *prefix, int len);
 
 #endif

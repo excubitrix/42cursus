@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:27:21 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 08:42:23 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:44:51 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	conv_n(t_tab *tab)
 	return (SUCCESS);
 }
 
-static int	get_tens(t_tab *tab, int *tens, long double g, long double rnd)
+static int	get_tens_g(t_tab *tab, int *tens, long double g, long double rnd)
 {
 	int		prec;
 	int		i;

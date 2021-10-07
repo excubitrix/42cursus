@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_f_bonus.c                                     :+:      :+:    :+:   */
+/*   conv_f.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/07 10:25:17 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:45:04 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 void	display_f(t_tab *tab, char *nbr, char *prefix)
 {
@@ -87,7 +87,7 @@ static int	do_f(t_tab *tab, long double f, int tens, char *prefix)
 	return (SUCCESS);
 }
 
-static int	get_tens(t_tab *tab, long double f)
+static int	get_tens_f(t_tab *tab, long double f)
 {
 	int		tens;
 	long	tmp;
@@ -118,14 +118,12 @@ int	conv_f(t_tab *tab)
 	f = tab->g;
 	if (tab->spec != 'g')
 		f = (long double)va_arg(tab->ap, double);
-	if (isinf(f) || isnan(f))
-		return (display_exp(tab, f));
-	prefix = get_sign(tab, signbit(f));
-	if (signbit(f))
+	prefix = get_sign(tab, f < 0);
+	if (f < 0)
 		f = -f;
 	if (tab->prec < 0)
 		tab->prec = 6;
-	if (do_f(tab, f, get_tens(tab, f), prefix) != SUCCESS)
+	if (do_f(tab, f, get_tens_f(tab, f), prefix) != SUCCESS)
 		return (FAILURE);
 	return (SUCCESS);
 }

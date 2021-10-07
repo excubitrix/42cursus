@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_e_bonus.c                                     :+:      :+:    :+:   */
+/*   conv_e.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 14:20:44 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 08:44:08 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:45:27 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#include "ft_printf.h"
 
 static char	*add_suffix(char *nbr, int len, int tens)
 {
@@ -85,7 +85,7 @@ static int	do_e(t_tab *tab, long double e, int tens, char *prefix)
 	return (SUCCESS);
 }
 
-static int	get_tens(long double *e)
+static int	get_tens_e(long double *e)
 {
 	long double	rnd;
 	int			tens;
@@ -119,14 +119,12 @@ int	conv_e(t_tab *tab)
 	e = tab->g;
 	if (tab->spec != 'g')
 		e = (long double)va_arg(tab->ap, double);
-	if (isinf(e) || isnan(e))
-		return (display_exp(tab, e));
-	prefix = get_sign(tab, signbit(e));
-	if (signbit(e))
+	prefix = get_sign(tab, e < 0);
+	if (e < 0)
 		e = -e;
 	if (tab->prec < 0)
 		tab->prec = 6;
-	tens = get_tens(&e);
+	tens = get_tens_e(&e);
 	if (do_e(tab, e, tens, prefix) != SUCCESS)
 		return (FAILURE);
 	return (SUCCESS);

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_f.c                                           :+:      :+:    :+:   */
+/*   conv_f_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 08:44:37 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:45:15 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 void	display_f(t_tab *tab, char *nbr, char *prefix)
 {
 	int		len;
 
-	len = ft_strlen(nbr) + (prefix);
+	len = ft_strlen(nbr) + (prefix != NULL);
 	if (prefix && tab->flag[3])
 		write(1, prefix, 1);
 	if (!tab->flag[0])
 		pre_padding(tab, len);
 	if (prefix && !tab->flag[3])
 		write(1, prefix, 1);
-	write(1, nbr, len - (prefix));
+	write(1, nbr, len - (prefix != NULL));
 	tab->len += len;
 	if (tab->flag[0])
 		padding(tab, ' ', tab->width - len, 1);
@@ -87,7 +87,7 @@ static int	do_f(t_tab *tab, long double f, int tens, char *prefix)
 	return (SUCCESS);
 }
 
-static int	get_tens(t_tab *tab, long double f)
+static int	get_tens_f(t_tab *tab, long double f)
 {
 	int		tens;
 	long	tmp;
@@ -118,12 +118,14 @@ int	conv_f(t_tab *tab)
 	f = tab->g;
 	if (tab->spec != 'g')
 		f = (long double)va_arg(tab->ap, double);
-	prefix = get_sign(tab, f < 0);
-	if (f < 0)
+	if (isinf(f) || isnan(f))
+		return (display_exp(tab, f));
+	prefix = get_sign(tab, signbit(f));
+	if (signbit(f))
 		f = -f;
 	if (tab->prec < 0)
 		tab->prec = 6;
-	if (do_f(tab, f, get_tens(tab, f), prefix) != SUCCESS)
+	if (do_f(tab, f, get_tens_f(tab, f), prefix) != SUCCESS)
 		return (FAILURE);
 	return (SUCCESS);
 }

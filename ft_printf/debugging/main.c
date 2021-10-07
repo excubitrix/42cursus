@@ -6,10 +6,11 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:32:52 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 18:39:36 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:40:37 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include "ft_printf_bonus.h" // bonus
 #include "ft_printf.h"
 #include <stdio.h>
 
@@ -49,9 +50,6 @@ int		main(void)
 	ft_printf("*****************************\n");
 	int x = 0;
 	int *p = &x;
-	// ret = ft_printf("%20c %20s %20d %20i %20e %20f %20lu %20x %20ls %20p", 'c', "Hello", -321234, 15, -78952.1568789, -65268.0, -9875786572382636, 6788254, L"World", &p);
-	ret = printf("%20c %20s %20d %20i %20e %20f %20lu %20x %20s %20p", 'c', "Hello", -321234, 15, -78952.1568789, -65268.0, -9875786572382636, 6788254, "World", &p);
-	printf("|\t\tret:%d\n", ret);
 	ret = ft_printf("%20c %20s %20d %20i %20e %20f %20lu %20x %20s %20p", 'c', "Hello", -321234, 15, -78952.1568789, -65268.0, -9875786572382636, 6788254, "World", &p);
 	ft_printf("|\t\tret:%d\n", ret);
 	ft_printf("*****************************\n");
