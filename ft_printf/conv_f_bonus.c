@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/05 08:44:29 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:25:17 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	display_f(t_tab *tab, char *nbr, char *prefix)
 {
 	int		len;
 
-	len = ft_strlen(nbr) + (prefix);
+	len = ft_strlen(nbr) + (prefix != NULL);
 	if (prefix && tab->flag[3])
 		write(1, prefix, 1);
 	if (!tab->flag[0])
 		pre_padding(tab, len);
 	if (prefix && !tab->flag[3])
 		write(1, prefix, 1);
-	write(1, nbr, len - (prefix));
+	write(1, nbr, len - (prefix != NULL));
 	tab->len += len;
 	if (tab->flag[0])
 		padding(tab, ' ', tab->width - len, 1);

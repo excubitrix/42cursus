@@ -6,12 +6,13 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/06 09:42:35 by floogman          #+#    #+#              #
-#    Updated: 2021/10/06 07:51:13 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 10:07:17 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 BONUS = $(BNSDIR)bonus.a
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 OPTIONS = -I $(INCDIR) -c
