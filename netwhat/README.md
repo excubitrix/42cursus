@@ -124,7 +124,7 @@ The `OSI model` serves as the vertical framework and standards that guide how in
 #### Practice
 - [Netwhat Trainer](https://github.com/adblanc/netwhat42-train)
 - [Netwhat Trainer (py)](https://github.com/abdlalisalmi/netwhat-trainer)
-#### README.md
+#### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### ProjectScore Badge
