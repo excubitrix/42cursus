@@ -1,8 +1,6 @@
 ![42 Stats](https://badge42.herokuapp.com/api/stats/floogman?privacyEmail=true)
 
-###### [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)
-
-## Project List
+## :small_orange_diamond: Project List
 ### Common Core
 CIRCLE | PROJECT | LANGUAGE | SCORE
 :-----:|:-------:|:--------:|:-----:
@@ -20,3 +18,14 @@ CIRCLE | PROJECT | LANGUAGE | SCORE
 04 | [CPP Modules (9)](./CPP_Modules) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2008)
 05 | [webserv](./webserv) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/webserv)
 05 | [ft_containers](./ft_containers) | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-plain.svg" alt="cpp" width="40" height="40"/> | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_containers)
+
+## :small_orange_diamond: Resources
+#### Makefile
+- [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
+    - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
+    - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
+#### README
+- [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
+#### ProjectScore Badge
+- [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)
