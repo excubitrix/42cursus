@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 19:38:42 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/23 15:13:00 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:10:57 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <errno.h>
 # include <math.h>
 
-# define MAX_SCREEN_WIDTH 1920
-# define MAX_SCREEN_HEIGHT 1040
+# define MAX_SCREEN_WIDTH 2560
+# define MAX_SCREEN_HEIGHT 1400
 # define MIN_SCREEN_WIDTH 400
 # define MIN_SCREEN_HEIGHT 240
 
@@ -30,7 +30,7 @@
 # define BLACK "\033[0;90m"
 # define RE "\033[0m"
 
-# define ERRNUM	17
+# define ERRNUM	18
 
 # define KEY_A 0
 # define KEY_S 1

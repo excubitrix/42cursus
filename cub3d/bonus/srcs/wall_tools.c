@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 09:20:15 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/22 09:54:38 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:07:19 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	check_grid_lines(t_data *s, t_vec *ctr, int *side, int *face)
 	{
 		s->dst.x += s->ray.dlt.x;
 		s->map.x += s->ray.step.x;
-		*face = s->ray.dir.x < 0 ? 'W' : 'E';
+		*face = s->ray.dir.x < 0 ? 'E' : 'W';
 		*side = 0;
 	}
 	else
 	{
 		s->dst.y += s->ray.dlt.y;
 		s->map.y += s->ray.step.y;
-		*face = s->ray.dir.y > 0 ? 'S' : 'N';
+		*face = s->ray.dir.y > 0 ? 'N' : 'S';
 		*side = 1;
 	}
 	ctr->x = s->map.x + (s->ray.step.x / 2);

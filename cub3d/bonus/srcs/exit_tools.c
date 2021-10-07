@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 08:24:22 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/23 14:45:53 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:02:25 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,4 +117,5 @@ void	init_errmsg(t_data *s)
 	s->errmsg[15] = "Invalid character found in map at ";
 	s->errmsg[16] = "Hole in wall found in map at ";
 	s->errmsg[17] = "The map has less then 3 type '4' sprites";
+	s->errmsg[18] = "First argument is not a .cub file";
 }

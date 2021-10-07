@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 19:38:42 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/23 20:04:46 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:08:12 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <errno.h>
 # include <math.h>
 
-# define MAX_SCREEN_WIDTH 1920
-# define MAX_SCREEN_HEIGHT 1040
+# define MAX_SCREEN_WIDTH 2560
+# define MAX_SCREEN_HEIGHT 1400
 # define MIN_SCREEN_WIDTH 400
 # define MIN_SCREEN_HEIGHT 240
 
@@ -32,7 +32,7 @@
 # define BLACK "\033[0;90m"
 # define RE "\033[0m"
 
-# define ERRNUM	18
+# define ERRNUM	19
 
 # define KEY_A 0
 # define KEY_S 1
@@ -237,8 +237,8 @@ typedef struct	s_data
 
 void			take(t_data *s);
 void			heal(t_data *s);
-int				checkin_inv(t_inv *inv);
-void			checkout_inv(t_inv	*inv, int nbr);
+int				checkin_inv(t_data *s);
+void			checkout_inv(t_data *s, int nbr);
 void			do_action(t_data *s, t_plr plr, t_vec pln);
 
 void			ft_open_close(t_data *s, double var, int x);

@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 10:09:27 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/23 15:08:52 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 08:59:17 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,32 @@ void	heal(t_data *s)
 	: s->plr.hp + (FULL / 8);
 }
 
-int		checkin_inv(t_inv *inv)
+int		checkin_inv(t_data *s)
 {
-	if (!inv->i)
-		inv->i = 1;
-	else if (!inv->ii)
-		inv->ii = 1;
-	else if (!inv->iii)
-		inv->iii = 1;
-	else if (!inv->iv)
-		inv->iv = 1;
+	if (!s->plr.inv.i)
+		s->plr.inv.i = 1;
+	else if (!s->plr.inv.ii)
+		s->plr.inv.ii = 1;
+	else if (!s->plr.inv.iii)
+		s->plr.inv.iii = 1;
+	else if (!s->plr.inv.iv)
+		s->plr.inv.iv = 1;
 	else
 		return (0);
 	ft_printf(BLACK"You stuff the box of instant noodles into your bag.\n"RE);
 	return (1);
 }
 
-void	checkout_inv(t_inv *inv, int nbr)
+void	checkout_inv(t_data *s, int nbr)
 {
-	if (inv->i && nbr == 1)
-		inv->i = 0;
-	else if (inv->ii && nbr == 2)
-		inv->ii = 0;
-	else if (inv->iii && nbr == 3)
-		inv->iii = 0;
-	else if (inv->iv && nbr == 4)
-		inv->iv = 0;
+	if (s->plr.inv.i && nbr == 1)
+		s->plr.inv.i = 0;
+	else if (s->plr.inv.ii && nbr == 2)
+		s->plr.inv.ii = 0;
+	else if (s->plr.inv.iii && nbr == 3)
+		s->plr.inv.iii = 0;
+	else if (s->plr.inv.iv && nbr == 4)
+		s->plr.inv.iv = 0;
 }
 
 void	do_action(t_data *s, t_plr plr, t_vec pln)

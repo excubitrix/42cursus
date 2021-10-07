@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 15:08:54 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/23 15:18:41 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 08:59:47 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_pick_up(t_data *s, t_plr *plr, double var, int x)
 	c = get_tile(s, pos.x, pos.y);
 	nbr = get_snbr(s, pos.x, pos.y);
 	if (c == '5' && plr->hp == FULL)
-		(!checkin_inv(&plr->inv)) &&
+		(!checkin_inv(s)) &&
 			ft_printf(BLACK"You don't have enough space in your bag.\n"RE);
 	if (((c == '5' && (!plr->inv.i || !plr->inv.ii || !plr->inv.iii ||
 		!plr->inv.iv || plr->hp < FULL)) || (c == '4' && plr->energy < 3)))
@@ -75,7 +75,10 @@ void	ft_use_item(t_data *s, t_inv *inv, int nbr)
 	{
 		if ((nbr == 1 && inv->i == 1) || (nbr == 2 && inv->ii == 1)
 			|| (nbr == 3 && inv->iii == 1) || (nbr == 4 && inv->iv == 1))
+		{
+			checkout_inv(s, nbr);
 			heal(s);
+		}
 	}
 	else if ((nbr == 1 && inv->i == 1) || (nbr == 2 && inv->ii == 1)
 		|| (nbr == 3 && inv->iii == 1) || (nbr == 4 && inv->iv == 1))

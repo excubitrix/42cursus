@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 08:24:22 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/21 15:08:18 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:12:09 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ void	ft_abort(t_data *s, int msg, char *file, int line)
 		ft_printf(RED"Error"RE"\n: %s", s->errmsg[msg - 1]);
 		if (msg <= 3)
 			ft_printf("line %d of .cub file", s->ln);
-		else if (msg >= 15)
+		else if (msg >= 15 && msg < 18)
 			ft_printf("[%d:%d]", s->col, s->ln);
-		else if (msg >= 14)
+		else if (msg >= 14 && msg < 18)
 			ft_printf("line %d near col %d of .cub file", s->ln, s->col + 1);
 		ft_printf(".\n");
 	}
@@ -114,4 +114,5 @@ void	init_errmsg(t_data *s)
 	s->errmsg[14] = "Duplicate player symbol found in map at ";
 	s->errmsg[15] = "Invalid character found in map at ";
 	s->errmsg[16] = "Hole in wall found in map at ";
+	s->errmsg[17] = "First argument is not a .cub file";
 }

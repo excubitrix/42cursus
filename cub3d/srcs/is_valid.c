@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 09:47:31 by floogman          #+#    #+#             */
-/*   Updated: 2021/01/21 15:15:34 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:13:18 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 int		check_input(t_data *s, int argc, char **argv)
 {
-	int		fd;
+	char	*ptr;
 	int		bmp;
+	int		fd;
 
 	bmp = 0;
 	if (argc < 2)
 		ft_abort(s, 9, __FILE__, __LINE__);
 	if (argc > 3)
 		ft_abort(s, 10, __FILE__, __LINE__);
+	if (!(ptr = ft_strchr(argv[1], '.')) || ft_strcmp(ptr, ".cub"))
+		ft_abort(s, 18, __FILE__, __LINE__);
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		ft_abort(s, 0, __FILE__, __LINE__);
 	close(fd);
