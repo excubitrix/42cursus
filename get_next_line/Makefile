@@ -6,12 +6,11 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/04 09:39:43 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 13:10:20 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libgnl.a
-BONUS = $(BNSDIR)libbns.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -19,9 +18,6 @@ CFLAGS = -Wall -Wextra -Werror
 VAR = -D BUFFER_SIZE=32
 # *-------------------------------------------------
 OPTIONS = $(VAR) -c
-
-INC = get_next_line.h
-INCS = $(addprefix $(SRCDIR), $(INC))
 
 SRCDIR = ./
 SRC = \
@@ -32,9 +28,11 @@ OBJDIR = ./obj/
 OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
+INC = get_next_line.h
+INCS = $(addprefix $(SRCDIR), $(INC))
+
 # BONUS
-BNSINC = get_next_line_bonus.h
-BNSINCS = $(addprefix $(BNSDIR), $(BNSINC))
+BONUS = $(BNSDIR)libbns.a
 
 BNSDIR = ./bonus/
 BNS = \
@@ -43,6 +41,9 @@ BNS = \
 
 BNSOBJ = $(BNS:.c=.o)
 BNSOBJS = $(addprefix $(OBJDIR), $(BNSOBJ))
+
+BNSINC = get_next_line_bonus.h
+BNSINCS = $(addprefix $(BNSDIR), $(BNSINC))
 
 # RULES *-------------------------------------------
 all: $(NAME)

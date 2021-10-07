@@ -1,6 +1,6 @@
 # :large_orange_diamond: get_next_line &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)
 
-The aim of this project is to learn about static variables by coding a getline-esque function that returns a line ending with a newline, read from a file descriptor.
+The aim of this project is to code a getline-esque function that returns a line ending with a newline, read from a file descriptor.
 
 ## :small_orange_diamond: Instructions
 
@@ -48,7 +48,7 @@ To test the bonus version, add the `-b` flag.
 - [Check Emoji](https://emojipedia.org/check-mark-button/)
 - [Cross Emoji](https://emojipedia.org/cross-mark/)
 - [Ascii Art](https://www.asciiart.eu/animals/other-land)
-#### README.md
+#### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### ProjectScore Badge
