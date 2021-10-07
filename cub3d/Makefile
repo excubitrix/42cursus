@@ -6,16 +6,11 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/07 10:11:27 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 13:09:10 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
-BONUS = ./bonus/cub3D
-
-LIBFT = libft.a
-LIBMLX = libmlx.a
-BMP = bitmap.bmp
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -23,7 +18,12 @@ OPTIONS = -I$(MLXDIR) -I$(INCDIR) -I$(LIBDIR) -c
 LIBS = -L$(LIBDIR) -lft -L$(MLXDIR) -lmlx -framework OpenGL -framework AppKit
 
 LIBDIR = ./libft/
+LIBFT = libft.a
+
 MLXDIR = ./minilibx_opengl_20191021/
+LIBMLX = libmlx.a
+
+BMP = bitmap.bmp
 
 SRCDIR = ./srcs/
 SRC = \
@@ -52,6 +52,9 @@ OBJS = $(addprefix $(OBJDIR), $(OBJ))
 INCDIR = ./includes/
 INC = cub3d.h bmp.h
 INCS = $(addprefix $(INCDIR), $(INC))
+
+# BONUS
+BONUS = ./bonus/cub3D
 
 # RULES *-------------------------------------------
 all: $(NAME)
