@@ -6,20 +6,15 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/06 09:42:35 by floogman          #+#    #+#              #
-#    Updated: 2021/10/07 10:07:17 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 13:10:00 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-BONUS = $(BNSDIR)bonus.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 OPTIONS = -I $(INCDIR) -c
-
-INCDIR = ./includes/
-INC = libft.h
-INCS = $(addprefix $(INCDIR), $(INC))
 
 SRCDIR = ./srcs/
 SRC = \
@@ -62,7 +57,13 @@ OBJDIR = ./obj/
 OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
+INCDIR = ./includes/
+INC = libft.h
+INCS = $(addprefix $(INCDIR), $(INC))
+
 # BONUS
+BONUS = $(BNSDIR)bonus.a
+
 BNSDIR = ./bonus/
 BNS = \
 	ft_lstadd_back.c \

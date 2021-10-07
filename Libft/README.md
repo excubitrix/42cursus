@@ -1,6 +1,6 @@
 # :large_orange_diamond: Libft &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)
 
-This is the very first project of the 2019 42cursus. Its aim is to become familiar with and understand an extract of useful standard library functions by coding our own C library.
+This is the very first project of the 2019 42cursus. Its aim is to recode a selection of useful standard library functions and build our own C library.
 
 ## :small_orange_diamond: Instructions
 
@@ -24,7 +24,7 @@ gcc -Wall -Wextra -Werror -L. -lft main.c
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
     - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
-#### README.md
+#### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### ProjectScore Badge
