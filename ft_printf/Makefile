@@ -6,12 +6,11 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/07 10:57:54 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 13:09:18 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-BONUS = libbnsprintf.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -49,6 +48,8 @@ INC = ft_printf.h
 INCS = $(addprefix $(INCDIR), $(INC))
 
 # BONUS
+BONUS = libbnsprintf.a
+
 BNSDIR = ./srcs/
 BNS = \
 	conv_e_bonus.c \

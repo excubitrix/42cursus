@@ -1,6 +1,6 @@
  # :large_orange_diamond: ft_printf &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)
 
-The aim of this project is to learn about variadic functions by coding a simplified printf.
+The aim of this project is to code a simplified printf.
 
 ## :small_orange_diamond: Instructions
 
@@ -22,7 +22,7 @@ gcc -Wall -Wextra -Werror -L. -lftprintf main.c
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
     - [addprefix](https://www.gnu.org/software/make/manual/make.html#File-Name-Functions)
     - [$@, $<](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
-#### README.md
+#### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### ProjectScore Badge
