@@ -14,7 +14,7 @@ The aim of this project is to learn about static variables by coding a getline-e
 gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ```
 
-![make_gnl](https://user-images.githubusercontent.com/59726559/136177671-910b8978-6e39-4d64-b7f0-ba9cb61a809a.gif)
+![make_gnl](https://user-images.githubusercontent.com/59726559/136330810-b0c6d175-89ec-462b-88df-b6268446874e.gif)
 
 ## :small_orange_diamond: Tester
 
