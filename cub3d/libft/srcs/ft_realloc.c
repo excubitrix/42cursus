@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 09:53:01 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/26 12:28:58 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:44:32 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_realloc(void *ptr, size_t newsize)
 	char	*newptr;
 	size_t	size;
 
-	if (ptr == NULL)
+	if (!ptr)
 		return (malloc(newsize * sizeof(char *)));
 	size = sizeof(ptr);
 	if (newsize <= size)

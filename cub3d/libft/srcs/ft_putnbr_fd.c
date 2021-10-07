@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 14:51:52 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:14:23 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == INT_MIN)
-	{
 		write(fd, "-2147483648", 11);
-	}
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -29,7 +27,5 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('0' + (n % 10), fd);
 	}
 	else
-	{
 		ft_putchar_fd('0' + n, fd);
-	}
 }

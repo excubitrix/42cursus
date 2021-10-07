@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/11 10:31:30 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:35:51 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (*lst == NULL)
+	if (!*lst)
 		*lst = new;
 	else
 	{

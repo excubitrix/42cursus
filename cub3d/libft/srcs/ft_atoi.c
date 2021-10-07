@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 13:05:21 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:34:22 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int		ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = '+';
-	while (ft_isspace(*nptr))
+	while ((*nptr > 8 && *nptr < 14) || *nptr == 32)
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
-	{
-		sign = *nptr;
-		nptr++;
-	}
+		sign = *nptr++;
 	while (ft_isdigit(*nptr))
-	{
-		result = result * 10 + (*nptr - 48);
-		nptr++;
-	}
+		result = result * 10 + (*nptr++ - 48);
 	if (result > LONG_MAX)
-		return (sign == '-' ? 0 : -1);
-	return (sign == '-' ? -result : result);
+	{
+		if (sign == '-')
+			return (0);
+		return (-1);
+	}
+	if (sign == '-')
+		return (-result);
+	return (result);
 }

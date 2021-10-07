@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/10 14:27:59 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:16:03 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 static int	count_words(char const *str, char sep)
 {
-	int i;
-	int count;
+	int		i;
+	int		count;
+	char	prev;
 
 	i = 0;
-	count = 0;
+	count = 1;
 	while (str[i])
 	{
-		if ((str[i] != sep && str[i - 1] == sep) || i == 0)
+		if (i > 0)
+			prev = str[i - 1];
+		else
+			prev = 0;
+		if (prev == sep && str[i] != sep)
 			count++;
 		i++;
 	}
@@ -36,7 +41,8 @@ static char	*malloc_word(char const *str, char sep)
 	i = 0;
 	while (str[i] && str[i] != sep)
 		i++;
-	if (!(word = (char *)malloc(sizeof(char) * (i + 1))))
+	word = malloc((i + 1) * sizeof(char));
+	if (!word)
 		return (NULL);
 	i = 0;
 	while (str[i] && str[i] != sep)
@@ -48,13 +54,28 @@ static char	*malloc_word(char const *str, char sep)
 	return (word);
 }
 
-char		**ft_split(char const *s, char c)
+static void	*split_free(char **tab)
+{
+	int	i;
+
+	i = 0;
+	if (!tab)
+		return (NULL);
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
+	tab = NULL;
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**tab;
 
-	if (s == NULL || !(tab = (char **)malloc(sizeof(char *)
-			* (count_words(s, c) + 1))))
+	if (s)
+		tab = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !tab)
 		return (NULL);
 	i = 0;
 	while (*s)
@@ -63,9 +84,9 @@ char		**ft_split(char const *s, char c)
 			s++;
 		if (*s && *s != c)
 		{
-			if (!(tab[i] = malloc_word(s, c)))
-				return (NULL);
-			i++;
+			tab[i] = malloc_word(s, c);
+			if (!tab[i++])
+				return (split_free(tab));
 			while (*s && *s != c)
 				s++;
 		}

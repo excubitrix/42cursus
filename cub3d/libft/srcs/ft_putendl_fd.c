@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/10 14:57:48 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:38:53 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return ;
 	while (s[i])
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/13 10:31:29 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:36:35 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_lst = NULL;
 	while (lst)
 	{
-		if (!(new_lnk = ft_lstnew((*f)(lst->content))))
+		new_lnk = ft_lstnew((*f)(lst->content));
+		if (!new_lnk)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);

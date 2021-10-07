@@ -6,77 +6,124 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 13:42:39 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:11:54 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:24:38 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	display_f(t_tab *tab, char *tmp, char prefix)
+void	display_f(t_tab *tab, char *nbr, char *prefix)
 {
 	int		len;
-	char	*ptr;
 
-	ptr = tmp;
-	if (ft_strcmp(tmp, "0") != 0 && ft_strncmp(tmp, "0.", 2) != 0)
-		while (tmp && *tmp == '0')
-			tmp++;
-	(tab->spec == 'g' && tab->prec > 0 && !tab->flag[4] &&
-			(tmp = trim_zeros(tmp, ft_strlen(tmp))));
-	len = (prefix) ? ft_strlen(tmp) + 1 : ft_strlen(tmp);
-	(prefix && tab->flag[3]) && (write(1, &prefix, 1));
-	(!tab->flag[0]) && (pre_padding(tab, len));
-	(prefix && !tab->flag[3]) && (write(1, &prefix, 1));
-	ft_putstr(tmp);
-	free(ptr);
+	len = ft_strlen(nbr) + (prefix != NULL);
+	if (prefix && tab->flag[3])
+		write(1, prefix, 1);
+	if (!tab->flag[0])
+		pre_padding(tab, len);
+	if (prefix && !tab->flag[3])
+		write(1, prefix, 1);
+	write(1, nbr, len - (prefix != NULL));
 	tab->len += len;
-	(tab->flag[0]) && (padding(tab, ' ', tab->width - len, 1));
+	if (tab->flag[0])
+		padding(tab, ' ', tab->width - len, 1);
+	free(nbr);
 }
 
-static int	do_f(t_tab *tab, long double f, int len, char prefix)
+char	*get_double(t_tab *tab, long double *d, uintmax_t *i, int k)
 {
-	uintmax_t	i;
+	uintmax_t	prec;
 	char		*tmp;
-	int			prec;
 
-	prec = tab->prec;
-	i = prec + len;
-	(tab->prec > 0 || tab->flag[4]) && (i++);
-	if (!(tmp = (char *)ft_calloc(sizeof(char), (i + 1))))
-		return (0);
+	tmp = ft_calloc((*i + 1), sizeof(char));
+	if (!tmp)
+		return (NULL);
+	prec = (uintmax_t)tab->prec;
+	while (tab->prec && k <= tab->prec && prec-- && (k++ || !k))
+	{
+		tmp[--(*i)] = '0';
+		if (trim_zeros(tab, tmp, i))
+			tmp[*i] = '\0';
+	}
 	while (tab->prec && prec--)
 	{
-		tmp[--i] = (uintmax_t)f % 10 + 48;
-		f /= 10;
+		tmp[--(*i)] = ((uintmax_t)(*d) % 10) + 48;
+		if (trim_zeros(tab, tmp, i))
+			tmp[*i] = '\0';
+		*d /= 10;
 	}
-	((tab->prec > 0 && len) || tab->flag[4]) && (tmp[--i] = '.');
-	while (len--)
+	if ((tmp[*i] && tab->prec > 0) || tab->flag[4])
+		tmp[--(*i)] = '.';
+	else if (tab->prec > 0)
+		tmp[--(*i)] = '\0';
+	return (tmp);
+}
+
+static int	do_f(t_tab *tab, long double f, int tens, char *prefix)
+{
+	uintmax_t	i;
+	uintmax_t	prec;
+	char		*tmp;
+	int			k;
+
+	i = 0;
+	while (i++ < (uintmax_t)tab->prec && (f - (long)f) > 0)
+		f *= 10;
+	f += 0.5;
+	if (tens == 1 && (long)f % 2 && f <= (double)((long)f))
+		f -= 0.5;
+	k = i;
+	prec = tab->prec;
+	i = prec + tens + (tab->prec > 0 || tab->flag[4]);
+	tmp = get_double(tab, &f, &i, k);
+	if (!tmp)
+		return (FAILURE);
+	while (tens--)
 	{
-		tmp[--i] = (uintmax_t)f % 10 + 48;
+		tmp[--i] = ((uintmax_t)f % 10) + 48;
 		f /= 10;
 	}
 	display_f(tab, tmp, prefix);
-	return (1);
+	return (SUCCESS);
 }
 
-int			conv_f(t_tab *tab)
+static int	get_tens_f(t_tab *tab, long double f)
 {
-	uintmax_t	i;
-	long double	f;
-	int			tens;
-	char		prefix;
+	int		tens;
+	long	tmp;
 
-	f = (tab->spec == 'g') ? (tab->g) : (long double)(va_arg(tab->ap, double));
-	prefix = get_sign(tab, (f < 0) ? 1 : 0);
-	f = (f < -0) ? (-f) : (f);
-	(tab->prec == -1) && (tab->prec = 6);
-	(tab->spec == 'g') && (tab->prec -= get_len((int)(f)));
-	tens = (f + 0.5 < 1) ? (1) : (get_len((int)(f + 0.5)));
-	i = 0;
-	while (i < (uintmax_t)tab->prec)
-		f *= (++i) ? (10) : (10);
-	f += 0.5;
-	if (!(do_f(tab, f, tens, prefix)))
-		return (0);
-	return (1);
+	tens = 1;
+	tmp = (long)(f + 0.5);
+	if (tmp == LONG_MIN)
+		tmp = LONG_MAX;
+	if (tmp >= 1)
+	{
+		tmp /= 10;
+		while (tmp)
+		{
+			tmp /= 10;
+			tens++;
+		}
+	}
+	if (tab->spec == 'g' && f >= 1)
+		tab->prec -= tens;
+	return (tens);
+}
+
+int	conv_f(t_tab *tab)
+{
+	long double	f;
+	char		*prefix;
+
+	f = tab->g;
+	if (tab->spec != 'g')
+		f = (long double)va_arg(tab->ap, double);
+	prefix = get_sign(tab, f < 0);
+	if (f < 0)
+		f = -f;
+	if (tab->prec < 0)
+		tab->prec = 6;
+	if (do_f(tab, f, get_tens_f(tab, f), prefix) != SUCCESS)
+		return (FAILURE);
+	return (SUCCESS);
 }

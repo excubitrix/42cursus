@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 11:59:13 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/22 09:32:44 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:50:49 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,54 @@
 
 static int	ft_abort(char *s)
 {
-	if (s != NULL)
+	if (s)
 		free(s);
 	return (-1);
 }
 
-int			do_line(char **s, char **line, int index)
+static int	do_line(char **s, char **line, int index)
 {
 	int	len;
 
 	len = gnl_strlen(*s);
-	if (!(*line = gnl_strndup(*s, index)))
+	*line = gnl_strndup(*s, index);
+	if (!*line)
 		return (ft_abort(*s));
 	if (index >= 0)
 	{
-		if (!(*s = gnl_strsubdup(*s, index + 1, len)))
+		*s = gnl_strsubdup(*s, index + 1, len);
+		if (!*s)
 			return (ft_abort(*s));
 		return (1);
 	}
-	else
-	{
-		free(*s);
-		*s = NULL;
-	}
+	free(*s);
+	*s = NULL;
 	return (0);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];
-	static char *s[OPEN_MAX];
+	static char	*s[OPEN_MAX];
 	int			bytes;
 
 	if (fd > OPEN_MAX || fd < 0 || !line)
 		return (-1);
-	while ((bytes = read(fd, &buf, BUFFER_SIZE)) > 0)
+	bytes = read(fd, &buf, BUFFER_SIZE);
+	while (bytes > 0)
 	{
 		buf[bytes] = '\0';
-		if (!(s[fd] = (!s[fd]) ? (gnl_strndup(buf, bytes)) :
-				(gnl_strjoin(s[fd], buf))))
+		if (!s[fd])
+			s[fd] = gnl_strndup(buf, bytes);
+		else
+			s[fd] = gnl_strjoin(s[fd], buf);
+		if (!s[fd])
 			return (-1);
 		if (gnl_strchr(s[fd], '\n') != -1)
 			break ;
+		bytes = read(fd, &buf, BUFFER_SIZE);
 	}
 	if (bytes < 0)
 		return (ft_abort(s[fd]));
-	else
-		return (do_line(&s[fd], line, gnl_strchr(s[fd], '\n')));
-	return (0);
+	return (do_line(&s[fd], line, gnl_strchr(s[fd], '\n')));
 }

@@ -6,75 +6,64 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:03:05 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:12:04 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:55:47 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	print_format(t_tab *tab, int len)
+int	display_mod(t_tab *tab)
 {
-	char *format;
-
-	format = NULL;
-	if (len <= 0)
-		return (1);
-	if (!(format = ft_substr(tab->f, (tab->i - len), len)))
-		return (0);
-	ft_putstr_fd(format, 1);
-	free(format);
-	tab->len += len;
-	return (1);
+	if (!tab->flag[0])
+		pre_padding(tab, 1);
+	write(1, "%", 1);
+	tab->len++;
+	if (tab->flag[0])
+		padding(tab, ' ', tab->width - 1, 1);
+	return (SUCCESS);
 }
 
-static int	parser(t_tab *tab)
+static int	parser(t_tab *tab, int counter)
 {
-	int counter;
+	int		i;
 
-	counter = 0;
-	if (ft_strcmp(tab->f, "%") == 0)
-		return (1);
 	while (tab->f[tab->i])
 	{
 		if (tab->f[tab->i] == '%')
 		{
-			if (!(print_format(tab, counter)))
-				return (0);
+			write(1, &tab->f[tab->i - counter], counter);
+			tab->len += counter;
 			reinit_tab(tab);
-			if (!(dispatcher(tab)))
-				return (0);
+			i = -1;
+			while (++i < 13)
+				if (!ft_strncmp(&tab->spec, &tab->conv_mask[i], 1))
+					if (tab->conv_ptr[i](tab) != SUCCESS)
+						return (FAILURE);
 			counter = 0;
 		}
 		else
 			counter++;
 		tab->i++;
 	}
-	if (!(print_format(tab, counter)))
-		return (0);
-	return (1);
+	write(1, &tab->f[tab->i - counter], counter);
+	tab->len += counter;
+	return (SUCCESS);
 }
 
-int			ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	t_tab	*tab;
-	int		len;
+	t_tab	tab;
 
-	if (!(tab = (t_tab *)malloc(sizeof(t_tab) * 1)))
-		return (-1);
-	tab->f = format;
-	tab = init_tab(tab);
+	init_tab(&tab, format);
 	if (format)
 	{
-		va_start(tab->ap, format);
-		if (!(parser(tab)))
+		va_start(tab.ap, format);
+		if (ft_strncmp(format, "%", 2) && parser(&tab, 0) != SUCCESS)
 		{
-			va_end(tab->ap);
-			free(tab);
+			va_end(tab.ap);
 			return (-1);
 		}
-		va_end(tab->ap);
+		va_end(tab.ap);
 	}
-	len = tab->len;
-	free(tab);
-	return (len);
+	return (tab.len);
 }

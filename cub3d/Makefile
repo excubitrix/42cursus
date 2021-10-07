@@ -6,15 +6,15 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/06 12:49:08 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/07 10:11:27 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 BONUS = ./bonus/cub3D
+
 LIBFT = libft.a
 LIBMLX = libmlx.a
-
 BMP = bitmap.bmp
 
 CC = gcc

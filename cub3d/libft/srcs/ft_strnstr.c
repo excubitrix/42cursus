@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/10 10:39:18 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:49:12 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
+	size_t	n;
 
-	i = ft_strlen(needle);
-	if (*needle == '\0')
+	n = ft_strlen(needle);
+	if (!n)
 		return ((char *)haystack);
-	while (*haystack && i <= len--)
+	while (*haystack && len-- >= n)
 	{
-		if (!ft_strncmp(haystack, needle, i))
+		if (!ft_memcmp(haystack, needle, n))
 			return ((char *)haystack);
 		haystack++;
 	}

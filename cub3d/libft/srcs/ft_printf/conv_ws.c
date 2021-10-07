@@ -6,15 +6,15 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 09:44:10 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:11:58 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:55:17 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		char_len(wchar_t c)
+static int	char_len(wchar_t c)
 {
-	int len;
+	int	len;
 
 	if (c <= 127)
 		len = 1;
@@ -27,14 +27,19 @@ static int		char_len(wchar_t c)
 	return (len);
 }
 
-static wchar_t	*wstrndup(wchar_t *str, size_t n)
+static wchar_t	*wstrdup(wchar_t *str)
 {
 	wchar_t	*new;
+	size_t	n;
 	size_t	i;
 
-	i = 0;
-	if (!(new = (wchar_t *)malloc(sizeof(wchar_t) * n + 1)))
+	n = 0;
+	while (str[n])
+		n++;
+	new = malloc((n + 1) * sizeof(wchar_t));
+	if (!new)
 		return (NULL);
+	i = 0;
 	while (str[i] && i < n)
 	{
 		new[i] = str[i];
@@ -44,58 +49,49 @@ static wchar_t	*wstrndup(wchar_t *str, size_t n)
 	return (new);
 }
 
-static wchar_t	*wstrdup(wchar_t *str)
-{
-	int		len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (wstrndup(str, len));
-}
-
-static int		display_null(t_tab *tab)
+static int	display_null(t_tab *tab)
 {
 	wchar_t		*s;
 	int			i;
 
 	i = 0;
-	if (!(s = wstrdup(L"(null)")))
-		return (0);
+	s = wstrdup(L"(null)");
+	if (!s)
+		return (FAILURE);
 	if (tab->prec > -1)
-	{
 		while (s[i] && tab->prec-- > 0)
 			display_wchar(tab, s[i++]);
-	}
 	else
-	{
 		while (s[i])
 			display_wchar(tab, s[i++]);
-	}
 	free(s);
-	return (1);
+	return (SUCCESS);
 }
 
-int				conv_ws(t_tab *tab)
+int	conv_ws(t_tab *tab)
 {
 	wchar_t		*s;
 	int			i;
 	int			j;
 	int			len;
 
+	s = (wchar_t *)va_arg(tab->ap, wchar_t *);
+	if (!s)
+		return (display_null(tab));
 	i = 0;
 	len = 0;
-	if (!(s = (wchar_t *)va_arg(tab->ap, wchar_t *)))
-		return (display_null(tab));
-	while (s[i] && !(j = 0))
+	while (s[i])
 	{
-		if (tab->prec > -1 && (len + char_len(s[i])) > tab->prec)
+		if (tab->prec >= 0 && (len + char_len(s[i])) > tab->prec)
 			break ;
 		len += char_len(s[i++]);
 	}
-	(!tab->flag[0]) && (pre_padding(tab, len));
+	if (!tab->flag[0])
+		pre_padding(tab, len);
+	j = 0;
 	while (j < i)
 		display_wchar(tab, s[j++]);
-	(tab->flag[0]) && (padding(tab, ' ', tab->width - len, 1));
-	return (1);
+	if (tab->flag[0])
+		padding(tab, ' ', tab->width - len, 1);
+	return (SUCCESS);
 }

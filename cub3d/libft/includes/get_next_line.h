@@ -6,18 +6,20 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 12:00:01 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:31:58 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:51:13 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-# define BUFFER_SIZE    1
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 int			get_next_line(int fd, char **line);
 

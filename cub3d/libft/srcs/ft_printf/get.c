@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:35:46 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:12:07 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:56:17 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 void	get_flags(t_tab *tab)
 {
-	size_t	i;
+	int		i;
 
-	i = 0;
 	tab->i++;
-	while (tab->flags[i] != '\0')
+	i = -1;
+	while (++i < 5)
 	{
-		while (tab->f[tab->i] == '-' && tab->f[tab->i + 1])
-			(tab->i++ > 0) && (tab->flag[0] = '-');
-		while (tab->f[tab->i] == '+' && tab->f[tab->i + 1])
-			(tab->i++ > 0) && (tab->flag[1] = '+');
-		while (tab->f[tab->i] == ' ' && tab->f[tab->i + 1])
-			(tab->i++ > 0) && (tab->flag[2] = ' ');
-		while (tab->f[tab->i] == '0' && tab->f[tab->i + 1])
-			(tab->i++ > 0) && (tab->flag[3] = '0');
-		while (tab->f[tab->i] == '#' && tab->f[tab->i + 1])
-			(tab->i++ > 0) && (tab->flag[4] = '#');
-		i++;
+		while (tab->f[tab->i] == '-' && tab->f[++tab->i])
+			tab->flag[0] = '-';
+		while (tab->f[tab->i] == '+' && tab->f[++tab->i])
+			tab->flag[1] = '+';
+		while (tab->f[tab->i] == ' ' && tab->f[++tab->i])
+			tab->flag[2] = ' ';
+		while (tab->f[tab->i] == '0' && tab->f[++tab->i])
+			tab->flag[3] = '0';
+		while (tab->f[tab->i] == '#' && tab->f[++tab->i])
+			tab->flag[4] = '#';
 	}
 }
 
 void	get_width(t_tab *tab)
 {
-	if (tab->f[tab->i] == '*' && tab->f[tab->i + 1])
+	if (tab->f[tab->i] == '*' && tab->f[++tab->i])
 	{
 		tab->width = (long)va_arg(tab->ap, int);
 		if (tab->width < 0)
@@ -44,36 +43,25 @@ void	get_width(t_tab *tab)
 			tab->flag[0] = '-';
 			tab->width = -tab->width;
 		}
-		tab->i++;
 	}
-	while (ft_isdigit(tab->f[tab->i]) &&
-		tab->f[tab->i + 1])
-	{
-		tab->width *= 10;
-		tab->width += (tab->f[tab->i] - 48);
-		tab->i++;
-	}
+	while (ft_isdigit(tab->f[tab->i]) && tab->f[tab->i + 1])
+		tab->width = (tab->width * 10) + (tab->f[tab->i++] - 48);
 }
 
 void	get_precision(t_tab *tab)
 {
-	if (tab->f[tab->i] == '.' && tab->f[tab->i + 1])
+	if (tab->f[tab->i] == '.' && tab->f[++tab->i])
 	{
 		tab->prec = 0;
-		tab->i++;
-	}
-	if (tab->f[tab->i] == '*' && tab->f[tab->i + 1])
-	{
-		tab->prec = (long)va_arg(tab->ap, int);
-		(tab->prec < 0) && (tab->prec = -1);
-		tab->i++;
-	}
-	while (ft_isdigit(tab->f[tab->i]) &&
-		tab->f[tab->i + 1])
-	{
-		tab->prec *= 10;
-		tab->prec += (tab->f[tab->i] - 48);
-		tab->i++;
+		if (tab->f[tab->i] == '*' && tab->f[++tab->i])
+		{
+			tab->prec = (long)va_arg(tab->ap, int);
+			if (tab->prec < 0)
+				tab->prec = -1;
+		}
+		else
+			while (ft_isdigit(tab->f[tab->i]) && tab->f[tab->i + 1])
+				tab->prec = (tab->prec * 10) + (tab->f[tab->i++] - 48);
 	}
 }
 
@@ -82,16 +70,9 @@ void	get_modifiers(t_tab *tab)
 	int	i;
 	int	j;
 
-	i = 0;
 	j = 0;
-	while (tab->modis[i])
-	{
+	i = -1;
+	while (tab->modis[++i])
 		while ((tab->modis[i] == tab->f[tab->i]) && (tab->f[tab->i + 1]))
-		{
-			tab->modi[j] = tab->f[tab->i];
-			tab->i++;
-			j++;
-		}
-		i++;
-	}
+			tab->modi[j++] = tab->f[tab->i++];
 }

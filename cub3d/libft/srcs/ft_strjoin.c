@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 13:38:44 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:46:12 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char		*ft_strjoin(char const *s1, char const *s2)
 {
-	int		len;
+	int		len1;
+	int		len2;
 	char	*ret;
 
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(ret = malloc(len + 1)))
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	ret = malloc((len1 + len2 + 1) * sizeof(char));
+	if (!ret)
 		return (NULL);
-	ret[0] = '\0';
-	ret = ft_strcat(ret, (char *)s1);
-	ret = ft_strcat(ret, (char *)s2);
+	ft_memcpy(ret, s1, len1);
+	ft_memcpy(ret + len1, s2, len2 + 1);
 	return (ret);
 }

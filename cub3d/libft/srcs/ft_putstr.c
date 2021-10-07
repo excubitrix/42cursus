@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 13:21:02 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 14:42:51 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:43:29 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_putstr(char *s)
 	int i;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (0);
 	while (s[i])
 	{

@@ -6,24 +6,16 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 13:21:39 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 14:43:04 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:43:59 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_putstr(char *s)
+int		ft_putstr_endl(char *s)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
+	if (!ft_putstr(s))
 		return (0);
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
 	ft_putchar('\n');
 	return (1);
 }

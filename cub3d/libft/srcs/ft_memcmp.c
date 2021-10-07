@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/01/13 13:25:06 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:37:40 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (n == 0)
+	if (!n)
 		return (0);
 	while (--n && *(unsigned char *)s1 == *(unsigned char *)s2)
 	{

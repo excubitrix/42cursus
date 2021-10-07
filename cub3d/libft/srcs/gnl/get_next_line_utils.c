@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 12:01:51 by floogman          #+#    #+#             */
-/*   Updated: 2020/03/21 17:14:07 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:50:36 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 size_t	gnl_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	if (s)
-		while (s[i])
-			i++;
+	while (s && s[i])
+		i++;
 	return (i);
 }
 
-int		gnl_strchr(const char *s, int c)
+int	gnl_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -44,13 +43,14 @@ int		gnl_strchr(const char *s, int c)
 
 char	*gnl_strndup(char *s1, int n)
 {
-	char *s2;
+	char	*s2;
 
 	if (!s1)
 		return (gnl_strndup("", 2));
 	else if (n < 0)
 		return (gnl_strndup(s1, gnl_strlen(s1)));
-	if (!(s2 = malloc(sizeof(char) * (n + 1))))
+	s2 = malloc((n + 1) * sizeof(char));
+	if (!s2)
 		return (NULL);
 	s2[n] = '\0';
 	while (n--)
@@ -64,7 +64,8 @@ char	*gnl_strsubdup(char *s, int start, int end)
 	char	*new_s;
 
 	new_len = end - start;
-	if (!(new_s = malloc(sizeof(char) * (new_len + 1))))
+	new_s = malloc((new_len + 1) * sizeof(char));
+	if (!new_s)
 		return (NULL);
 	new_s[new_len] = '\0';
 	while (new_len-- && end--)
@@ -83,7 +84,8 @@ char	*gnl_strjoin(char *s1, char const *s2)
 	i = 0;
 	j = 0;
 	len = gnl_strlen(s1) + gnl_strlen(s2);
-	if (!(output = malloc(sizeof(char) * len + 1)))
+	output = malloc((len + 1) * sizeof(char));
+	if (!output)
 		return (NULL);
 	while (len-- && s1[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 09:31:18 by floogman          #+#    #+#             */
-/*   Updated: 2020/05/02 13:29:17 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/07 09:38:03 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*csrc;
-	unsigned char	*cdest;
+	char		*d;
+	const char	*s;
 
-	csrc = (unsigned char *)src;
-	cdest = (unsigned char *)dest;
-	if (dest == NULL && src == NULL)
+	d = dest;
+	s = src;
+	if (!dest && !src)
 		return (NULL);
 	while (n--)
-		*cdest++ = *csrc++;
+		*d++ = *s++;
 	return (dest);
 }
