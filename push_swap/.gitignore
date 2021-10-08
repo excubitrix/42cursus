@@ -1,0 +1,25 @@
+# Object directory and files
+obj/
+*.o
+
+# Libraries
+*.a
+
+# Executables
+*.exe
+*.out
+checker
+checker_bonus
+push_swap
+push_swap_bonus
+
+# Debug files
+*.dSYM
+
+# Misc
+.vscode
+.DS_Store
+*.swp
+
+# Test files
+push_swap-tester/
