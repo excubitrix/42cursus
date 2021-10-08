@@ -8,29 +8,29 @@ The aim of this project is to code a getline-esque function that returns a line 
 
 2. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
 
-3. Link the resulting library `libgnl.a` using the `-L`/`-l` flags.
+3. Link the resulting library `libgnl.a` using the `-L`/`-l` flags with your main.c file.
 
 ```
 gcc -Wall -Wextra -Werror -L. -lgnl main.c
 ```
 
-![make_gnl](https://user-images.githubusercontent.com/59726559/136330810-b0c6d175-89ec-462b-88df-b6268446874e.gif)
+![make_gnl](https://user-images.githubusercontent.com/59726559/136507860-23c81964-1b20-4eef-aad2-6b431aca753c.gif)
 
 ## :small_orange_diamond: Tester
 
-To test the mandatory version, run the `tester.sh` located in `./tests` without arguments.
+To test the mandatory version, execute the `run.sh` script located in the `./tester` folder without arguments.
 
 ```
-./tests/tester.sh
+./tester/run.sh
 ```
 
 To test the bonus version, add the `-b` flag.
 
 ```
-./tests/tester.sh -b
+./tester/run.sh -b
 ```
 
-![gnl_tester](https://user-images.githubusercontent.com/59726559/136174280-9fb42087-0f56-4d66-8d58-fd42a4dabeea.gif)
+![gnl_tester](https://user-images.githubusercontent.com/59726559/136508257-2915a179-ed55-4c08-9bd7-6c6a01cb5ffa.gif)
 
 ## :small_orange_diamond: Resources
 - [Static Variables In C](https://www.geeksforgeeks.org/static-variables-in-c/)
