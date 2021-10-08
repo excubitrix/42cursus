@@ -6,11 +6,13 @@ The aim of this project is to code a simplified printf.
 
 1. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
 
-2. Link the resulting library `libftprintf.a` using the `-L`/`-l` flags.
+2. Link the resulting library `libftprintf.a` using the `-L`/`-l` flags with your main.c file.
 
 ```
 gcc -Wall -Wextra -Werror -L. -lftprintf main.c
 ```
+
+![make_ft_printf](https://user-images.githubusercontent.com/59726559/136529059-66aabf0d-6a2a-40e8-99cc-e9e9c1018f16.gif)
 
 ## :small_orange_diamond: Resources
 - [Code range (UTF-8)](https://docs.microsoft.com/en-us/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver15#storage_differences)
