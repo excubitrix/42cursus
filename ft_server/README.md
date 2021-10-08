@@ -4,7 +4,15 @@ The aim of this project is to set up a web server using docker.
 
 ## :small_orange_diamond: Instructions
 
-1. Make sure docker is installed.
+1. Make sure [docker](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is installed.
+	- You can check this by running the following command in your terminal:
+	```
+	which docker
+	```
+	- If it's missing, docker can be installed via homebrew:
+	```
+	brew install docker
+	```
 
 2. Run `docker build -t image_name .` to build the image.
 
@@ -25,8 +33,8 @@ Command | Description
 `docker system prune -a` | removes all containers and all images not in use
 
 ## :small_orange_diamond: Resources
-#### docker
-- [Orientation and Setup](https://docs.docker.com/get-started/)
+#### Docker
+- [Docker on Max w/ homebrew - A Step By Step Guide](https://www.cprime.com/resources/blog/docker-on-mac-with-homebrew-a-step-by-step-tutorial/)
 - [Best Practices for Writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 #### Wordpress
 - [How To Install WordPress with LEMP (Nginx, MariaDB and PHP) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10)
