@@ -1,0 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile.influxdb                                :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
+#    Updated: 2021/02/21 19:37:29 by floogman         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+FROM alpine:3.13.1
+
+EXPOSE 8086
+
+RUN apk update && \
+	apk --no-cache add \
+	influxdb=1.8.3-r2 \
+	telegraf=1.17.0-r0
+
+CMD sh scripts/start.sh

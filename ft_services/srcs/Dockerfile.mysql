@@ -1,0 +1,24 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile.mysql                                   :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
+#    Updated: 2021/02/21 19:15:46 by floogman         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+FROM alpine:3.13.1
+
+EXPOSE 3306
+
+RUN apk update && \
+	apk --no-cache add \
+	mysql=10.5.8-r0 \
+	mysql-client=10.5.8-r0 \
+	openssl=1.1.1j-r0 \
+	telegraf=1.17.0-r0 
+
+CMD sh /scripts/start.sh

@@ -1,0 +1,23 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile.ftps                                    :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
+#    Updated: 2021/02/21 19:15:35 by floogman         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+FROM alpine:3.13.1
+
+EXPOSE 21 30001
+
+RUN apk update && \
+	apk --no-cache add \
+	openssl=1.1.1j-r0 \
+	telegraf=1.17.0-r0 \
+	vsftpd=3.0.3-r6
+
+CMD sh scripts/start.sh

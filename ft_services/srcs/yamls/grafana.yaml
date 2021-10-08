@@ -1,0 +1,217 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  annotations:
+    metallb.universe.tf/address-pool: default
+    metallb.universe.tf/allow-shared-ip: kee
+  labels:
+    app: grafana
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 3000
+  selector:
+    app: grafana
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  labels:
+    app: grafana
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          exec:
+            command:
+            - pgrep
+            - telegraf
+          initialDelaySeconds: 25
+          periodSeconds: 5
+        volumeMounts:
+        - name: start-sh
+          mountPath: /scripts
+        - name: grafana-config
+          mountPath: /etc/grafana.ini
+          subPath: grafana.ini
+        - name: provisioning
+          mountPath: /usr/share/grafana/conf/provisioning
+        - name: telegraf-config
+          mountPath: /etc/telegraf.conf
+          subPath: telegraf.conf
+      volumes:
+      - name: start-sh
+        configMap:
+          name: grafana-config
+          items:
+          - key: start.sh
+            path: start.sh
+          defaultMode: 0751
+      - name: grafana-config
+        configMap:
+          name: grafana-config
+          items:
+          - key: grafana.ini
+            path: grafana.ini
+      - name: provisioning
+        configMap:
+          name: grafana-config
+          items:
+          - key: dashboards.yml
+            path: dashboards/dashboards.yml
+          - key: datasources.yml
+            path: datasources/datasources.yml
+      - name: telegraf-config
+        configMap:
+          name: grafana-config
+          items:
+          - key: telegraf.conf
+            path: telegraf.conf
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-config
+data:
+  start.sh: |
+    #! /bin/sh
+
+    if [ ! -f /etc/ssl/certs/selfsigned.crt ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=grafana" \
+        -out /etc/ssl/certs/selfsigned.crt -keyout /etc/ssl/private/selfsigned.key
+    elif [ ! -f /etc/ssl/private/selfsigned.key ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=grafana" \
+        -out /etc/ssl/certs/selfsigned.crt -keyout /etc/ssl/private/selfsigned.key
+    fi
+
+    telegraf --config /etc/telegraf.conf &
+    /usr/sbin/grafana-server -config /etc/grafana.ini -homepath /usr/share/grafana/
+  grafana.ini: |
+    [server]
+    protocol = https
+    root_url = %(protocol)s://%(domain)s/
+    cert_file = /etc/ssl/certs/selfsigned.crt
+    cert_key = /etc/ssl/private/selfsigned.key
+    [database]
+    host = influxdb
+    name = telegraf
+    user = telegraf
+    password = secure
+    [auth.proxy]
+    enabled = true
+    whitelist = 
+    headers = 
+  dashboards.yml: |
+    apiVersion: 1
+    providers:
+    - name: 'default'
+      orgId: 1
+      folder: ''
+      folderUid: ''
+      type: file
+      options:
+        path: /var/lib/grafana/dashboards
+  datasources.yml: |
+    apiVersion: 1
+    datasources:
+    - name: InfluxDB
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: influxdb
+      user: user
+      password: secure
+    - name: NGINX
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: nginx
+      user: user
+      password: secure
+    - name: MySQL
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: mysql
+      user: user
+      password: secure
+    - name: phpMyAdmin
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: phpmyadmin
+      user: user
+      password: secure
+    - name: WordPress
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: wordpress
+      user: user
+      password: secure
+    - name: FTPS
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: ftps
+      user: user
+      password: secure
+    - name: Grafana
+      type: influxdb
+      access: proxy
+      orgId: 1
+      url: http://influxdb:8086
+      database: grafana
+      user: user
+      password: secure
+  telegraf.conf: |
+    [agent]
+      hostname = "ft_services"
+      interval = "10s"
+      flush_interval = "10s"
+      round_interval = true
+    [[outputs.influxdb]]
+      urls = ["http://influxdb:8086"]
+      database = "grafana"
+      timeout = "5s"
+      username = "telegraf"
+      password = "secure"
+    [[inputs.cpu]]
+      percpu = true
+      totalcpu = true
+      collect_cpu_time = false
+      report_active = false
+    [[inputs.disk]]
+      ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+    [[inputs.diskio]]
+    [[inputs.kernel]]
+    [[inputs.mem]]
+    [[inputs.processes]]
+    [[inputs.swap]]
+    [[inputs.system]]
+    [[inputs.netstat]]
+    [[inputs.net]]

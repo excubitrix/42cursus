@@ -1,0 +1,253 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  annotations:
+    metallb.universe.tf/address-pool: default
+    metallb.universe.tf/allow-shared-ip: kee
+  labels:
+    app: nginx
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+    - name: https
+      port: 443
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+        livenessProbe:
+          exec:
+            command:
+            - pgrep
+            - telegraf
+          initialDelaySeconds: 25
+          periodSeconds: 5
+        volumeMounts:
+        - name: start-sh
+          mountPath: /scripts
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+        - name: index-html
+          mountPath: /www/index.html
+          subPath: index.html
+        - name: telegraf-config
+          mountPath: /etc/telegraf.conf
+          subPath: telegraf.conf
+      volumes:
+      - name: start-sh
+        configMap:
+          name: nginx-config
+          items:
+          - key: start.sh
+            path: start.sh
+          defaultMode: 0751
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: default.conf
+            path: default.conf
+      - name: index-html
+        configMap:
+          name: nginx-config
+          items:
+          - key: index.html
+            path: index.html
+      - name: telegraf-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: telegraf.conf
+            path: telegraf.conf
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  start.sh: |
+    #! /bin/sh
+
+    if [ ! -d /run/nginx ]; then
+        mkdir -p /run/nginx
+    fi
+
+    if [ ! -f /etc/ssl/certs/selfsigned.crt ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=nginx" \
+        -out /etc/ssl/certs/selfsigned.crt -keyout /etc/ssl/private/selfsigned.key
+    elif [ ! -f /etc/ssl/private/selfsigned.key ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=nginx" \
+        -out /etc/ssl/certs/selfsigned.crt -keyout /etc/ssl/private/selfsigned.key
+    fi
+
+    telegraf --config /etc/telegraf.conf &
+    nginx -g "daemon off;"
+  default.conf: |
+    server {
+        listen                  80 default_server;
+
+        return 301              https://$host$request_uri;
+    }
+
+    server {
+        listen                  443 ssl;
+
+        ssl_certificate         /etc/ssl/certs/selfsigned.crt;
+        ssl_certificate_key     /etc/ssl/private/selfsigned.key;
+
+        root                    /www;
+        index                   index.html index.htm;
+
+        location / {
+            try_files           $uri $uri/ =404;
+        }
+
+        location /phpmyadmin/ {
+            proxy_pass          https://phpmyadmin:5000/;
+            proxy_set_header    X-Forwarded-Proto   $scheme;
+        }
+
+        location /wordpress {
+            return 307          https://$host:5050/;
+        }
+    }
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>ft_services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h1 {
+      color: #3f3f3f;
+        font-size: 300%;
+    }
+    h3 {
+      color: #fff;
+    }
+    img {
+      max-width:75%;
+        height:auto;
+    }
+    button {
+      margin: 5em;
+    }
+    .header {
+      background-color: #ffc400;
+      padding: 30px;
+      text-align: center;
+    }
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      text-align: center;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .footer {
+      color: #aaa;
+      background-color: #3f3f3f;
+      padding: 10px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    <div class="header">
+      <h1>ft_services</h1>
+      <h3>A 42 PROJECT</h3>
+    </div>
+    <p style="margin-top:0;padding:30px;text-align:center;">Welcome!</p>
+    <div class="row">
+      <div class="column">
+        <img src="/images/grafana.png" alt="" width="628" height="351">
+        <button onclick="document.location='https://192.168.64.102:3000/'">Visit Grafana</button>
+      </div>
+      <div class="column">
+        <img src="/images/phpmyadmin.png" alt="" width="628" height="351">
+        <button onclick="document.location='https://192.168.64.102:5000/'">Visit phpMyAdmin</button>
+      </div>
+      <div class="column">
+        <img src="/images/wordpress.png" alt="" width="628" height="351">
+        <button onclick="document.location='https://192.168.64.102:5050/'">Visit WordPress</button>
+      </div>
+    </div>
+    <div class="footer">
+      <p>by floogman</p>
+    </div>
+    </body>
+    </html>
+  telegraf.conf: |
+    [agent]
+      hostname = "ft_services"
+      interval = "10s"
+      flush_interval = "10s"
+      round_interval = true
+    [[outputs.influxdb]]
+      urls = ["http://influxdb:8086"]
+      database = "nginx"
+      timeout = "5s"
+      username = "telegraf"
+      password = "secure"
+    [[inputs.cpu]]
+      percpu = true
+      totalcpu = true
+      collect_cpu_time = false
+      report_active = false
+    [[inputs.disk]]
+      ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+    [[inputs.diskio]]
+    [[inputs.kernel]]
+    [[inputs.mem]]
+    [[inputs.processes]]
+    [[inputs.swap]]
+    [[inputs.system]]
+    [[inputs.netstat]]
+    [[inputs.net]]

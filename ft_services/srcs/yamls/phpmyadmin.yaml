@@ -1,0 +1,197 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin
+  annotations:
+    metallb.universe.tf/address-pool: default
+    metallb.universe.tf/allow-shared-ip: kee
+  labels:
+    app: phpmyadmin
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 5000
+  selector:
+    app: phpmyadmin
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+  labels:
+    app: phpmyadmin
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - name: phpmyadmin
+        image: phpmyadmin
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        livenessProbe:
+          exec:
+            command:
+            - ./scripts/liveness.sh
+          initialDelaySeconds: 25
+          periodSeconds: 5
+        volumeMounts:
+        - name: start-sh
+          mountPath: /scripts/start.sh
+          subPath: start.sh
+        - name: liveness-sh
+          mountPath: /scripts/liveness.sh
+          subPath: liveness.sh
+        - name: phpmyadmin-config
+          mountPath: /www/phpmyadmin/config.inc.php
+          subPath: config.inc.php
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+        - name: telegraf-config
+          mountPath: /etc/telegraf.conf
+          subPath: telegraf.conf
+      volumes:
+      - name: start-sh
+        configMap:
+          name: phpmyadmin-config
+          items:
+          - key: start.sh
+            path: start.sh
+          defaultMode: 0751
+      - name: liveness-sh
+        configMap:
+          name: liveness-sh
+          defaultMode: 0751
+      - name: phpmyadmin-config
+        configMap:
+          name: phpmyadmin-config
+          items:
+          - key: config.inc.php
+            path: config.inc.php
+      - name: nginx-config
+        configMap:
+          name: phpmyadmin-config
+          items:
+          - key: default.conf
+            path: default.conf
+      - name: telegraf-config
+        configMap:
+          name: phpmyadmin-config
+          items:
+          - key: telegraf.conf
+            path: telegraf.conf
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: phpmyadmin-config
+data:
+  start.sh: |
+    #! /bin/sh
+
+    if [ ! -d /run/nginx ]; then
+        mkdir -p /run/nginx
+    fi
+
+    if [ ! -f /etc/ssl/certs/nginx.crt ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=pma" \
+        -out /etc/ssl/certs/nginx.crt -keyout /etc/ssl/private/nginx.key
+    elif [ ! -f /etc/ssl/private/nginx.key ]; then
+        openssl req -newkey rsa:2048 -x509 -sha256 -days 365 -nodes \
+        -subj "/C=BE/ST=Brussels/L=Brussels/O=19OU=floogman/CN=pma" \
+        -out /etc/ssl/certs/nginx.crt -keyout /etc/ssl/private/nginx.key
+    fi
+
+    telegraf --config /etc/telegraf.conf &
+    php-fpm7 &
+    nginx -g "daemon off;"
+  config.inc.php: |
+    <?php
+    $cfg['blowfish_secret'] = 'kP4q39:([ZLv3WHF|R]k|B:sD\i/\(3~';
+    $cfg['TempDir'] = '/tmp';
+
+    $i = 1;
+
+    $cfg['Servers'][$i]['auth_type'] = 'cookie';
+    $cfg['Servers'][$i]['host'] = 'mysql';
+    $cfg['Servers'][$i]['compress'] = false;
+    $cfg['Servers'][$i]['AllowNoPassword'] = true;
+
+    $cfg['Servers'][$i]['controluser'] = 'user';
+    $cfg['Servers'][$i]['controlpass'] = 'secure';
+
+    $cfg['Servers'][$i]['ssl'] = true;
+
+    $cfg['PmaAbsoluteUri'] = './';
+
+    $cfg['UploadDir'] = '';
+    $cfg['SaveDir'] = '';
+  default.conf: |
+    server {
+        listen                  5000 ssl default_server;
+        
+        ssl_certificate         /etc/ssl/certs/nginx.crt;
+        ssl_certificate_key     /etc/ssl/private/nginx.key;
+
+        root                    /www/phpmyadmin;
+        index                   index.php index.html index.htm;
+
+        error_page 497          https://$host:5000$request_uri;
+
+        location ~ \.php$ {
+            fastcgi_pass        127.0.0.1:9000;
+            include             fastcgi_params;
+            include             fastcgi.conf;
+        }
+    }
+  telegraf.conf: |
+    [agent]
+      hostname = "ft_services"
+      interval = "10s"
+      flush_interval = "10s"
+      round_interval = true
+
+    [[outputs.influxdb]]
+      urls = ["http://influxdb:8086"]
+      database = "phpmyadmin"
+
+      timeout = "5s"
+      username = "telegraf"
+      password = "secure"
+      
+    [[inputs.cpu]]
+      percpu = true
+      totalcpu = true
+      collect_cpu_time = false
+      report_active = false
+    [[inputs.disk]]
+      ignore_fs = ["tmpfs", "devtmpfs", "devfs"]
+    [[inputs.diskio]]
+    [[inputs.kernel]]
+    [[inputs.mem]]
+    [[inputs.processes]]
+    [[inputs.swap]]
+    [[inputs.system]]
+    [[inputs.netstat]]
+    [[inputs.net]]
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: liveness-sh
+data:
+  liveness.sh: |
+      #!/bin/sh
+
+      pgrep php-fpm && pgrep telegraf
