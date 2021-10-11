@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:25:05 by floogman          #+#    #+#             */
-/*   Updated: 2021/04/23 11:14:14 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/11 09:43:20 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 # define A 0
 # define B 1
+
+# define BUFFER 1024
 
 # define RESET "\033[0m"
 # define WHITE "\033[47m"
