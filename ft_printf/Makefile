@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/07 13:09:18 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/11 08:38:49 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-OPTIONS = -I$(INCDIR) -c
+OPTIONS = -I $(INCDIR) -c
 
 LIBDIR = ../Libft/
 LIBFT = libft.a

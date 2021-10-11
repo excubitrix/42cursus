@@ -1,6 +1,6 @@
 # :large_orange_diamond: ft_server &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_server)
 
-The aim of this project is to set up a web server using docker.
+The objective of this project is to set up a web server using docker.
 
 ## :small_orange_diamond: Instructions
 

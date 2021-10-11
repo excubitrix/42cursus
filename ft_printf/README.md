@@ -1,6 +1,6 @@
  # :large_orange_diamond: ft_printf &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)
 
-The aim of this project is to code a simplified printf.
+The objective of this project is to code a simplified printf.
 
 ## :small_orange_diamond: Instructions
 

@@ -1,6 +1,6 @@
 # :large_orange_diamond: ft_services &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_services)
 
-The aim of this project is to get familiar with Kubernetes by creating a multi-service cluster, using locally build images.
+The objective of this project is to get familiar with Kubernetes by creating a multi-service cluster, using locally build images.
 
 ## :small_orange_diamond: Instructions
 

@@ -1,6 +1,6 @@
 # :large_orange_diamond: libasm &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/libasm)
 
-The aim of this project is to get familiar with assembly language.
+The objective of this project is to get familiar with assembly language.
 
 ## :small_orange_diamond: Instructions
 
