@@ -4,18 +4,21 @@ The objective of this project is to sort data on a stack, using the lowest possi
 
 ## :small_orange_diamond: Description
 
-This project consists of two programs: *checker* and *push_swap*.
+This project consists of two programs: `checker` and `push_swap`.
 
-The *checker* program takes as an argument stack A formatted as a list of intergers and will then wait and read instructions from stdin. Once all instructions have been read, checker will display 'OK' or 'KO' depending on whether or not the list of instructions was successful in sorting stack A.
+The `checker` program takes as an argument stack A formatted as a list of intergers and will then wait and read instructions from stdin. Once all instructions have been read, checker will display 'OK' or 'KO' depending on whether or not the list of instructions was successful in sorting stack A.
 
-The *push_swap* program takes as an argument also stack A formatted as a list of intergers and will then display the smallest list of instructions it can muster to sort stack A (with the smallest number being at the top).
+The `push_swap` program takes as an argument also stack A formatted as a list of intergers and will then display the smallest list of instructions it can muster to sort stack A (with the smallest number being at the top).
 
 ## :small_orange_diamond: Instructions
 
-Run `make` or `make bonus` to compile both programs.
+1. Run `make` or `make bonus` to compile both programs.
 
-They can be used together as follows:<br>
-`ARG="<list of intergers>"; ./push_swap $ARG | ./checker $ARG`
+2. Execute the progams separately
+    - `./<program> "<list of intergers>"`<br>
+
+    or together
+    - `ARG="<list of intergers>"; ./push_swap $ARG | ./checker $ARG`
 
 The number of instructions outputted by *push_swap* can be counted using wc like this:<br>
 `ARG="<list of intergers>"; ./push_swap $ARG | wc -l`
@@ -23,9 +26,8 @@ The number of instructions outputted by *push_swap* can be counted using wc like
 ## :small_orange_diamond: Bonus Flags
 
 Flags should be used as follows:<br>
-`ARG="<list of intergers>"; ./push_swap <flags> $ARG` or<br>
-`ARG="<list of intergers>"; ./checker <flags> $ARG` or<br>
-`ARG="<list of intergers>"; ./push_swap $ARG | ./checker <flags> $ARG`
+`ARG="<list of intergers>"; ./<program> [flags] $ARG` or<br>
+`ARG="<list of intergers>"; ./push_swap $ARG | ./checker [flags] $ARG`
 
 Flag | Description | push_swap | checker
 :---:|:-----------:|:---------:|:-------:
