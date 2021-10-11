@@ -1,0 +1,57 @@
+# Prerequisites
+*.d
+
+# Compiled Object files + Object directories
+*.slo
+*.lo
+*.o
+*.obj
+obj/
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Misc
+.DS_Store
+.vscode/
+megaphone
+directory
+ponies
+zombies
+horde
+brainz
+clubs
+replace
+*.replace
+attack
+logger
+test.log
+cato9tails
+fixed
+eval_expr
+traps
+*_shrubbery
+convert
+sub/
+resub/
