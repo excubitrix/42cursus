@@ -1,0 +1,21 @@
+# Object directory and files
+obj/
+*.o
+
+# Libraries
+*.a
+
+# Executables
+*.exe
+*.out
+philo_one
+philo_two
+philo_three
+
+# Debug files
+*.dSYM
+
+# Misc
+.vscode
+.DS_Store
+*.swp
