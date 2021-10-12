@@ -51,7 +51,6 @@ return \<status_code\> [[http://<hostname>:<port>]/\<path\>];<br>&emsp;&emsp;&em
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-- [Table Without Bold Heading](https://stackoverflow.com/questions/28630435/markdown-table-without-bold-heading)
 - [Check Emoji](https://emojipedia.org/check-mark-button/)
 - [Cross Emoji](https://emojipedia.org/cross-mark/)
 #### ProjectScore Badge
