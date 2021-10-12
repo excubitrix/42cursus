@@ -1,0 +1,230 @@
+curl -s -X GET -I localhost:8080
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 2118
+AutoIndex: /
+
+curl -s -X POST -I localhost:8080
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: GET
+
+curl -s -X DELETE -I localhost:8080
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: GET
+
+curl -s -X HEAD -I localhost:8080
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: GET
+
+curl -s -X PUT -I localhost:8080
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: GET
+
+curl -s -X CONNECT -I localhost:8080
+HTTP/1.1 501 Not Implemented
+
+curl -s -X GET -I localhost:8080/subdir_NONE/
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: NONE
+
+curl -s -X POST -I localhost:8080/subdir_NONE/
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: NONE
+
+curl -s -X DELETE -I localhost:8080/subdir_NONE/
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: NONE
+
+curl -s -X HEAD -I localhost:8080/subdir_NONE/
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: NONE
+
+curl -s -X PUT -I localhost:8080/subdir_NONE/
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/html
+Content-Length: 1558
+Allow: NONE
+
+curl -s -X CONNECT -I localhost:8080/subdir_NONE/
+HTTP/1.1 501 Not Implemented
+
+curl -s -X GET -I localhost:8080/subdir_GET/testfile
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 44
+
+curl -s -X POST -I localhost:8080/subdir_POST/testfile
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1594
+
+curl -s -X HEAD -I localhost:8080/subdir_HEAD/testfile
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 45
+
+curl -s -X GET localhost:8080/subdir_GET/testfile
+Hello from testfile in /testing/subdir_GET/
+
+curl -s -I localhost:8080/subdir_HEAD/testfile
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 45
+
+
+../www/testing/subdir_DELETE/file_to_delete.out
+curl -s -X DELETE -I localhost:8080/subdir_DELETE/file_to_delete.out
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1594
+
+../www/testing/subdir_DELETE/file_to_delete.out
+curl -s -X DELETE -I localhost:8080/subdir_DELETE/NOT_file_to_delete.out
+HTTP/1.1 400 Bad Request
+Content-Type: text/html
+Content-Length: 1544
+
+../www/testing/subdir_DELETE/file_to_delete.out
+curl -s -X DELETE -I localhost:8080/subdir_DELETE/dir_to_delete
+HTTP/1.1 400 Bad Request
+Content-Type: text/html
+Content-Length: 1544
+
+curl -s -X GET -I localhost:8080/..............................................................................................100|................................................................................................200|.................................................................................................299|
+HTTP/1.1 404 Not Found
+Content-Type: text/html
+Content-Length: 1328
+
+curl -s -X GET -I localhost:8080/................................................................................................100|................................................................................................200|................................................................................................300|
+HTTP/1.1 414 URI Too Long
+
+
+curl -s -X POST localhost:8080/subdir_POST -d "Hello There"
+	<title>201 Created</title>
+upload1
+
+curl -s -X POST localhost:8080/subdir_POST/ -d "Hello There"
+	<title>201 Created</title>
+upload1
+upload2
+
+curl -s -X POST localhost:8080/subdir_POST/random/path -d "Hello There"
+	<title>201 Created</title>
+upload1
+upload2
+upload3
+
+curl -s -X POST localhost:8080/subdir_POST/random/path/ -d "Hello There"
+	<title>201 Created</title>
+upload1
+upload2
+upload3
+upload4
+
+curl -s -X POST localhost:8080/subdir_upload -d "Hello There"
+	<title>201 Created</title>
+testfile
+upload1
+
+curl -s -X POST localhost:8080/subdir_upload/ -d "Hello There"
+	<title>201 Created</title>
+testfile
+upload1
+upload2
+
+curl -s -X PUT localhost:8080/subdir_PUT -d "Hello There"
+	<title>500 Internal Server Error</title>
+testfile
+
+curl -s -X PUT localhost:8080/subdir_PUT/ -d "Hello There"
+	<title>400 Bad Request</title>
+testfile
+
+curl -s -X PUT localhost:8080/subdir_PUT/some/path/ -d "Hello There"
+	<title>400 Bad Request</title>
+testfile
+
+curl -s -X PUT localhost:8080/subdir_PUT/some/path -d "Hello There"
+	<title>201 Created</title>
+some
+testfile
+
+../www/testing/subdir_PUT/some:
+path
+
+curl -s -X PUT localhost:8080/subdir_PUT/some/path/newfile -d "Hello There"
+	<title>500 Internal Server Error</title>
+some
+testfile
+
+../www/testing/subdir_PUT/some:
+path
+
+curl -s -X PUT localhost:8080/subdir_upload -d "Hello There"
+	<title>500 Internal Server Error</title>
+testfile
+upload1
+upload2
+
+curl -s -X PUT localhost:8080/subdir_upload/ -d "Hello There"
+	<title>400 Bad Request</title>
+testfile
+upload1
+upload2
+
+curl -s -X PUT localhost:8080/subdir_upload/newfile -d "Hello There"
+	<title>201 Created</title>
+newfile
+testfile
+upload1
+upload2
+
+curl -s -X PUT localhost:8080/subdir_upload/some/path/newfile -d "Hello There"
+	<title>201 Created</title>
+newfile
+some
+testfile
+upload1
+upload2
+
+../www/testing/subdir_upload/some:
+path
+
+../www/testing/subdir_upload/some/path:
+newfile
+
+curl -s -X POST localhost:8080/subdir_POST -H "Content-Type: plain/text" --data "................................................................................................100|"
+	<title>201 Created</title>
+upload1
+upload2
+upload3
+upload4
+upload5
+
+curl -s -X POST localhost:8080/subdir_POST -H "Content-Type: plain/text" --data ".................................................................................................101|"
+upload1
+upload2
+upload3
+upload4
+upload5
+curl -s -X GET -I localhost:8080/subdir_GET/forbidden.out
+HTTP/1.1 403 Forbidden
+Content-Type: text/html
+Content-Length: 334
+

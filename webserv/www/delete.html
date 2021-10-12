@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<title>Delete File</title>
+	<style>
+		body, html {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Courier New', Courier, monospace;
+		}
+		body {
+			background-image: url(https://i.pinimg.com/originals/cf/ba/c0/cfbac0720c63d6a7b5a47f1cae17067d.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: white;
+			text-shadow:
+				-1px -1px 3px black,  
+				1px -1px 3px black,
+				-1px 1px 3px black,
+				1px 1px 3px black;
+		}
+		nav a {
+			color: white;
+			font-weight: bold;
+		}
+		p {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="http://localhost:8080/">home</a>
+	</nav>
+	<br>
+	<h1>Delete File</h1>
+	<p><b>Delete a file (from /uploads/) with the form below.</b></p>
+	<form method="POST">
+		localhost/<input type="text" id="fileToDelete" maxlength="100" required>
+		<input type="submit" id="delete-button" value="Delete" >
+	</form>
+	<script type = "text/javascript">
+		$('#delete-button').click(function()
+		{
+			$.ajax(
+			{
+				type: "DELETE",
+				url: $('#fileToDelete').val(),
+				data: 'fileToDelete=rm ' + $('#fileToDelete').val() // floor
+				// data: 'fileToDelete=rm www/uploads/' + $('#fileToDelete').val()
+			});
+		})
+	</script>
+</body>
+</html>
