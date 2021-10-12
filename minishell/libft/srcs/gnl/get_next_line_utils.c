@@ -1,0 +1,102 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/15 12:01:51 by floogman          #+#    #+#             */
+/*   Updated: 2021/02/23 10:49:01 by floogman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "get_next_line.h"
+
+size_t	gnl_strlen(const char *s)
+{
+	size_t i;
+
+	i = 0;
+	if (s)
+		while (s[i])
+			i++;
+	return (i);
+}
+
+int		gnl_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			if (s[i] == c)
+				return (i);
+			i++;
+		}
+		if (s[i] == c)
+			return (i);
+	}
+	return (-1);
+}
+
+char	*gnl_strndup(char *s1, int n)
+{
+	char *s2;
+
+	if (!s1)
+		return (gnl_strndup("", 2));
+	else if (n < 0)
+		return (gnl_strndup(s1, gnl_strlen(s1)));
+	if (!(s2 = malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	s2[n] = '\0';
+	while (n--)
+		s2[n] = s1[n];
+	return (s2);
+}
+
+char	*gnl_strsubdup(char *s, int start, int end)
+{
+	int		new_len;
+	char	*new_s;
+
+	new_len = end - start;
+	if (!(new_s = malloc(sizeof(char) * (new_len + 1))))
+		return (NULL);
+	new_s[new_len] = '\0';
+	while (new_len-- && end--)
+		new_s[new_len] = s[end];
+	free(s);
+	return (new_s);
+}
+
+char	*gnl_strjoin(char *s1, char const *s2)
+{
+	int		i;
+	int		j;
+	int		len;
+	char	*output;
+
+	i = 0;
+	j = 0;
+	len = gnl_strlen(s1) + gnl_strlen(s2);
+	if (!(output = malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	while (len-- && s1[i])
+	{
+		output[i] = s1[i];
+		i++;
+	}
+	while (len-- && s2[j])
+	{
+		output[i + j] = s2[j];
+		j++;
+	}
+	output[i + j] = s2[j];
+	output[i + j + 1] = '\0';
+	free(s1);
+	return (output);
+}
