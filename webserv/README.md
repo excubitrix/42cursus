@@ -1,7 +1,9 @@
 # :large_orange_diamond: webserv &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/webserv)
 
-|<span style="font-weight:normal">Webserv is a group project for teams of two to three students. Its objective is to write an HTTP server.</span> | Team Member
-|:------------------------------------------------------------------------------------------------------------------------------------------------|:----------:
+Webserv is a group project for teams of two to three students. Its objective is to write an HTTP server.
+
+|  | Team Member
+|:-|:-----------:
 <img width="1700" alt="webserv" src="https://user-images.githubusercontent.com/59726559/136910177-efdf7931-e1e4-47e4-a459-0419eadf3a82.png"> | <a href="https://github.com/magalifabri"><sub><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="250"/><br/></sub><sub><b>mfabri</b></sub></a>
 
 ## :small_orange_diamond: Instructions
