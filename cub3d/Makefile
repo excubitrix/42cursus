@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:31:53 by floogman          #+#    #+#              #
-#    Updated: 2021/10/11 08:38:34 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/12 08:40:42 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,13 +79,13 @@ $(BONUS):
 
 # MISC
 clean:
-	rm -rf $(OBJDIR)
+	/bin/rm -rf $(OBJDIR)
 	@ $(MAKE) -C ./bonus/ clean
 	@ $(MAKE) -C $(LIBDIR) clean
 	@ $(MAKE) -C $(MLXDIR) clean
 
 fclean: clean
-	rm -f $(NAME) $(BMP)
+	/bin/rm -f $(NAME) $(BMP)
 	@ $(MAKE) -C ./bonus/ fclean
 	@ $(MAKE) -C $(LIBDIR) fclean
 

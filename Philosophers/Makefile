@@ -29,7 +29,7 @@ clean:
 	@ $(MAKE) clean -C $(THREEDIR)
 
 fclean: clean
-	@ rm -f $(ONE) $(TWO) $(THREE)
+	@ /bin/rm -f $(ONE) $(TWO) $(THREE)
 	@ $(MAKE) fclean -C $(ONEDIR)
 	@ $(MAKE) fclean -C $(TWODIR)
 	@ $(MAKE) fclean -C $(THREEDIR)
