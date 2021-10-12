@@ -34,8 +34,6 @@ Run `make` or `make bonus` to compile and `./minishell` to launch the shell.<br>
 - Write and edit multiline commands.
 - Wildcard `*` as it works in bash.
 
-## :small_orange_diamond: RESOURCES:
-
 ## :small_orange_diamond: Resources
 - [Guide to Writing Your Own Shell](https://www.cs.purdue.edu/homes/grr/SystemsProgrammingBook/Book/Chapter5-WritingYourOwnShell.pdf)
 - [Understandin Shell Syntax](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html)
