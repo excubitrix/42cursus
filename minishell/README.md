@@ -4,7 +4,7 @@ Minishell is a group project for a team of two students. Its objective is to cre
 
 |  | Team Member
 |:-|:-----------:
-![minishell](https://user-images.githubusercontent.com/59726559/136932417-21c8fe83-0e32-4a90-a64d-b26129187add.gif) | <a href="https://github.com/magalifabri"><sub><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="250"/><br/></sub><sub><b>mfabri</b></sub></a>
+![minishell](https://user-images.githubusercontent.com/59726559/136935416-9eac8847-ffd0-4f82-bdab-7bc29d40f07c.gif) | <a href="https://github.com/magalifabri"><sub><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="250"/><br/></sub><sub><b>mfabri</b></sub></a>
 
 ## :small_orange_diamond: Instructions
 
