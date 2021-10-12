@@ -1,8 +1,8 @@
 # :large_orange_diamond: webserv &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/webserv)
 
-|   |   |
+|   | Team Member |
 |:-:|:-:|
-<img width="1700" alt="webserv" src="https://user-images.githubusercontent.com/59726559/136910177-efdf7931-e1e4-47e4-a459-0419eadf3a82.png"> | Team Member<br/><a href="https://github.com/magalifabri"><sub><br><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="250"/><br/></sub><sub><b>mfabri</b></sub></a> |
+<img width="1700" alt="webserv" src="https://user-images.githubusercontent.com/59726559/136910177-efdf7931-e1e4-47e4-a459-0419eadf3a82.png"> | <a href="https://github.com/magalifabri"><sub><br><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="250"/><br/></sub><sub><b>mfabri</b></sub></a> |
 
 Webserv is a group project for teams of two to three students. Its objective is to write an HTTP server.
 
