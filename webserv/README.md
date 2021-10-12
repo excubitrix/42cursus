@@ -2,7 +2,7 @@
 
 |   |   |
 |:-:|:-:|
-<img width="1726" alt="webserv" src="https://user-images.githubusercontent.com/59726559/136910177-efdf7931-e1e4-47e4-a459-0419eadf3a82.png"> | Team Member<a href="https://github.com/magalifabri"><sub><br><b>mfabri</b></sub><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="200"/></a> |
+<img width="1726" alt="webserv" src="https://user-images.githubusercontent.com/59726559/136910177-efdf7931-e1e4-47e4-a459-0419eadf3a82.png"> | Team Member<br/><a href="https://github.com/magalifabri"><sub><br><img src="https://avatars.githubusercontent.com/u/65071369?v=4" alt="mfabri" width="200"/><br/></sub><sub><b>mfabri</b></sub></a> |
 
 Webserv is a group project for teams of two to three students. Its objective is to write an HTTP server.
 
@@ -21,7 +21,7 @@ Webserv is a group project for teams of two to three students. Its objective is 
 
 ## :small_orange_diamond: Config File
 
-The syntax of the configuration file is inspired by NGINX's configuration file.
+The syntax of the configuration file is inspired by [NGINX's configuration file](https://www.nginx.com/resources/wiki/start/topics/examples/full/).
 
 Supported directives are:
 
