@@ -138,6 +138,8 @@ The *Domain Name System* or `DNS` is a directory of names that match with IP add
 ### Default Gateway
 A `Default Gateway` is a node that enables a seamless connection between networks, allowing one device to talk to another device on a different network. It is called a 'default' gateway because it is the first and default route to take unless another option is activey requested.
 
+<br>
+
 ## :small_orange_diamond: Resources
 - [IP Address - Definition and Explanation](https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address)
 - [Netmask](https://www.computerhope.com/jargon/n/netmask.htm)
