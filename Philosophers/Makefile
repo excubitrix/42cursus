@@ -1,26 +1,29 @@
+NAME1 = one
 ONE = philo_one
-ONEDIR = ./philo_one
+ONEDIR = ./philo_one/
 
+NAME2 = two
 TWO = philo_two
-TWODIR = ./philo_two
+TWODIR = ./philo_two/
 
+NAME3 = three
 THREE = philo_three
-THREEDIR = ./philo_three
+THREEDIR = ./philo_three/
 
 # RULES *-------------------------------------------
-all: $(ONE) $(TWO) $(THREE)
+all: $(NAME1) $(NAME2) $(NAME3)
 
-$(ONE):
+$(NAME1):
 	@ $(MAKE) -C $(ONEDIR)
-	cp $(ONEDIR)$(ONE) .
+	cp $(ONEDIR)$(ONE) $(NAME1)
 
-$(TWO):
+$(NAME2):
 	@ $(MAKE) -C $(TWODIR)
-	cp $(TWODIR)$(TWO) .
+	cp $(TWODIR)$(TWO) $(NAME2)
 
-$(THREE):
+$(NAME3):
 	@ $(MAKE) -C $(THREEDIR)
-	cp $(THREEDIR)$(THREE) .
+	cp $(THREEDIR)$(THREE) $(NAME3)
 
 # MISC
 clean:
@@ -29,7 +32,7 @@ clean:
 	@ $(MAKE) clean -C $(THREEDIR)
 
 fclean: clean
-	@ /bin/rm -f $(ONE) $(TWO) $(THREE)
+	@ rm -f $(NAME1) $(NAME2) $(NAME3)
 	@ $(MAKE) fclean -C $(ONEDIR)
 	@ $(MAKE) fclean -C $(TWODIR)
 	@ $(MAKE) fclean -C $(THREEDIR)
