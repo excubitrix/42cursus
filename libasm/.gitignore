@@ -17,5 +17,4 @@ bonus_leaks.txt
 *.swp
 *.a
 obj/
-libasm_test/
-mlibasm_tester/
+logs/
