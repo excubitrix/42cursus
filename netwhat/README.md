@@ -4,7 +4,7 @@ This project is an introduction to network problematics.
 
 ## :small_orange_diamond: Notes
 ### What is an IP address?
-An IP address is a 32 bits (IPv4) unique address that identifies a device on the internet or a local network. IP stands for `"Internet Protocol"`, which is a set of rules governing the format of data sent via the internet or local network.<br>
+An `IP address` is a 32 bits ([IPv4](https://www.avast.com/c-ipv4-vs-ipv6-addresses)) unique address that identifies a device on the internet or a local network. IP stands for `"Internet Protocol"`, which is a set of rules governing the format of data sent via the internet or local network.<br>
 IP addresses are normally expressed in `dotted-decimal` notation, with four numbers (or `octets`) separated by periods, such as 192.168.123.132.<br>
 Each number can range from `0 to 255` and the full IP addressing range goes from `0.0.0.0 to 255.255.255.255`.<br><br>
 
@@ -78,7 +78,7 @@ The main difference between public and private IP addresses is how far they reac
 |192.168.0.0 - 192.168.255.255|
 
 ### TCP vs. UDP
-`TCP` (transmission control protocol) and `UDP` (user datagram protocol) are `internet protocols` that transfer data. More specifically, TCP and UDP are both communication protocols and fall within the `transport layer` of the `OSI model`.<br>
+*Transmission Control Protocol* (`TCP`) and *User Datagram Protocol* (`UDP`) are `internet protocols` that transfer data. More specifically, TCP and UDP are both communication protocols and fall within the `transport layer` of the `OSI model`.<br>
 A list of key differences between the two:<br>
 TCP | UDP
 :---:|:---:
@@ -100,20 +100,17 @@ The `OSI model` serves as the vertical framework and standards that guide how in
 6. Presentation
 7. Application (highest)
 
-## TO DO
 ### DHCP
-### DNS
-### ROUTING
-### DEFAULT GATEWAY
-### PORT from IP's POV
+A `DHCP Server` can be a router or a server acting as a host. This is a networked device that automatically provides and assigns IP addresses, default gateway and other network parameters to client devices. It relies on the standart protocol known as *Dynamic Host Configuration Protocol* or `DHCP` to respond to broadcast quries by clients (such as a computer or a mobile device).
 
-## Unassigned
-- `DHCP` uses `UDP` at the transport layer
-- `DHCP` supports both `IPv4` and `IPv6`
-- an `IPv4 address` has a size of `32 bits`
-- an `IPv6 address` has a size of `128 bits`
-- `Ping` uses `ICMP` (internet control message protocol)
-- `C` is the `default IP address class` available
+### DNS
+The *Domain Name System* or `DNS` is a directory of names that match with IP addresses, allowing for the conversion between human readable domain names and computer readable IP addresses.
+
+### Routing
+`Routing` is the process of selecting a path across one or more networks to move packets of data from their source to their destination.
+
+### Default Gateway
+A `Default Gateway` is a node that enables a seamless connection between networks, allowing one device to talk to another device on a different network. It is called a 'default' gateway because it is the first and default route to take unless another option is activey requested.
 
 ## :small_orange_diamond: Resources
 - [IP Address - Definition and Explanation](https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address)
@@ -121,6 +118,10 @@ The `OSI model` serves as the vertical framework and standards that guide how in
 - [Understanding TCP/IP Addressing and Subnetting Basics](https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting)
 - [Guide To Subnetting](https://www.softwaretestinghelp.com/subnet-mask-and-network-classes/)
 - [TCP vs UDP](https://sectigostore.com/blog/tcp-vs-udp-whats-the-difference/)
+- [DHCP](https://www.tek-tools.com/network/what-is-dhcp)
+- [DNS](https://dnsmadeeasy.com/support/what-is-dns/)
+- [Routing](https://www.webopedia.com/definitions/routing/)
+- [Default Gateway](https://www.itpro.co.uk/network-internet/30327/what-is-a-default-gateway)
 #### Practice
 - [Netwhat Trainer](https://github.com/adblanc/netwhat42-train)
 - [Netwhat Trainer (py)](https://github.com/abdlalisalmi/netwhat-trainer)
