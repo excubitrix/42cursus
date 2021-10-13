@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floogman <floogman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 09:14:20 by floogman          #+#    #+#             */
-/*   Updated: 2021/03/10 09:45:02 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:19:34 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	part3(int argc, char **argv)
 		test_strdup(" only \\0", "\0");
 		test_strdup("", "testing: 1, 2, 3");
 	}
-	system("leaks out > leaks.txt");
+	// system("leaks out > leaks.txt");
 	return (0);
 }
 

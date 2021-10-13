@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/02 13:06:35 by floogman          #+#    #+#             */
-/*   Updated: 2021/03/09 11:58:44 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:19:42 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	part2(int argc, char **argv, t_list *head)
 	}
 	if (argc == 1 || !(strcmp(argv[1], "ft_atoi_base")))
 		testing_atoi_base();
-	system("leaks out_bonus > leaks_bonus.txt");
+	// system("leaks out_bonus > leaks_bonus.txt");
 	return (0);
 }
 

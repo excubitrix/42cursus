@@ -6,13 +6,14 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/27 16:04:31 by floogman          #+#    #+#              #
-#    Updated: 2021/10/07 13:13:23 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/13 12:13:06 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 
-NASM = /usr/local/bin/nasm
+NASM = /usr/bin/nasm
+# NASM = /usr/local/bin/nasm
 NASM_FLAGS = -f macho64
 
 SRCDIR = ./srcs/
@@ -71,31 +72,6 @@ $(BONUS): $(OBJDIR) $(OBJS) $(BNSOBJS) $(INCS) $(BNSINCS)
 
 $(OBJDIR)%.o: $(BNSDIR)%.s
 	@ $(NASM) $(NASM_FLAGS) -o $@ $<
-
-# make test (mandatory functions) -------------------------
-TEST = out
-TEST_SRC = \
-	./testing/main.c \
-	./testing/tests.c \
-	./testing/tools.c
-
-INC = ./testing/
-
-test: $(TEST)
-$(TEST): $(NAME) $(TEST_SRC)
-	@ gcc -Wall -Wextra -Werror -I$(INC) -L. -lasm -o $(TEST) $(TEST_SRC)
-
-# BONUS
-TEST_BONUS = out_bonus
-BONUS_SRC = \
-	./testing/main_bonus.c \
-	./testing/tests_bonus.c \
-	./testing/ft_atoi_base_c.c \
-	./testing/tools.c
-
-test_bonus: $(TEST_BONUS)
-$(TEST_BONUS): bonus $(TEST_BONUS_SRC)
-	@ gcc -Wall -Wextra -Werror -I$(INC) -L. -lasm -o $(TEST_BONUS) $(BONUS_SRC)
 
 # MISC
 clean:

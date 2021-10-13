@@ -4,15 +4,30 @@ The objective of this project is to get familiar with assembly language.
 
 ## :small_orange_diamond: Instructions
 
-Run `make` for a library including only the mandatory functions and `make bonus` for a library including all functions.
+1. Make sure [nasm](https://www.nasm.us/) is installed.
+	- You can check this by running the following command in your terminal:
+	```
+	which nasm
+	```
+	- If it's missing, nasm can be installed via homebrew:
+	```
+	brew install nasm
+	```
+
+2. Run `make` for a library including only the mandatory functions and `make bonus` for a library including all functions.
 
 ## :small_orange_diamond: Testing
 
-1. Run `make test` or `make test_bonus` to compile a test executable with the provided main.c or main_bonus.c respectively.
+To test the mandatory functions, execute the `run.sh` script located in the `./tester` folder without arguments.
 
-2. Execute `./out` or `./out_bonus` for the full test or with the name of one of the functions as an argument to test that specific function.
 ```
-./out [function_name]
+./tester/run.sh
+```
+
+To test the bonus functions, add the `-b` flag.
+
+```
+./tester/run.sh -b
 ```
 
 ## :small_orange_diamond: Resources

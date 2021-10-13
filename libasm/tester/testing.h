@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 07:41:38 by floogman          #+#    #+#             */
-/*   Updated: 2021/03/09 11:17:42 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:07:07 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define TESTING_H
 
 # include "../includes/libasm.h"
-# include "../bonus/includes/bonus.h"
+# include "../bonus/bonus.h"
 
 /*
 ** <stdio.h> to use printf
