@@ -1,15 +1,21 @@
 # :large_orange_diamond: cub3d &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/cub3d)
 
-The objective of this project is to make a dynamic view inside a maze using ray-casting.
+The objective of this project is to create a dynamic view inside a maze using ray-casting.
 
 ## :small_orange_diamond: Instructions
 
 1. Run `make` to compile a game equipped with only the mandatory features and `make bonus` for one with all features.
 
-2. Execute the resulting executable with a valid .cub file as its first argument.
+2. Execute the resulting executable with a valid `.cub` file as its first argument.
 ```
 ./cub3D maps/mandatory.cub
 ```
+
+## :small_orange_diamond: Sneak Peek
+
+Mandatory | Bonus
+:----:|:-----:
+![cub3d](https://user-images.githubusercontent.com/59726559/136191725-80ea9a67-8aba-4b6e-a61f-ad499503982b.gif) | ![bonus_cub3d](https://user-images.githubusercontent.com/59726559/136191133-655ffe1b-3345-448e-93c5-e533eae64a3e.gif)
 
 ## :small_orange_diamond: Controls
 
@@ -62,12 +68,6 @@ Official bonuses (15/14):
 
 Unofficial bonuses (1):
 - inventory
-
-## :small_orange_diamond: Sneak Peek
-
-Mandatory | Bonus
-:----:|:-----:
-![cub3d](https://user-images.githubusercontent.com/59726559/136191725-80ea9a67-8aba-4b6e-a61f-ad499503982b.gif) | ![bonus_cub3d](https://user-images.githubusercontent.com/59726559/136191133-655ffe1b-3345-448e-93c5-e533eae64a3e.gif)
 
 ## :small_orange_diamond: Resources
 - [A MiniLibX Documentation by hsmits and jvan-sni](https://harm-smits.github.io/42docs/libs/minilibx)
