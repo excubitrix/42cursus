@@ -6,16 +6,17 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/10 08:00:57 by floogman          #+#    #+#              #
-#    Updated: 2021/03/26 19:05:56 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/22 12:25:56 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
-BONUS = srcs/bonus/bonus
-LIBFT = libft.a
 
-LIBDIR = ./libft/
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
+
+LIBFT = libft.a
+LIBDIR = ./libft/
 
 INC = ./includes/
 SRCDIR = ./srcs/
@@ -63,6 +64,8 @@ OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJDIR), $(OBJ))
 
 # BONUS
+BONUS = srcs/bonus/bonus
+
 BNSDIR = ./srcs/bonus/
 BNS = \
 	../main.c \
@@ -114,7 +117,7 @@ RMDIR = /bin/rm -rf
 all: $(NAME)
 $(NAME): $(LIBDIR)$(LIBFT) $(OBJDIR) $(OBJS) $(INC)minishell.h
 	@ echo "\n\033[0;32mCompiling minishell..."
-	@ gcc $(CFLAGS) $(OBJS) -I$(INC) -L$(LIBDIR) -lft -ltermcap -o $(NAME)
+	@ $(CC) $(CFLAGS) $(OBJS) -I$(INC) -L$(LIBDIR) -lft -ltermcap -o $(NAME)
 	@ echo "Done!\033[0m"
 
 # libft
@@ -126,13 +129,13 @@ $(OBJDIR):
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(INC)minishell.h
 	@ printf "\033[0;33mGenerating minishell %-33.33s\r" $@
-	@ gcc $(CFLAGS) -I$(INC) -c -o $@ $<
+	@ $(CC) $(CFLAGS) -I$(INC) -c -o $@ $<
 
 # BONUS
 bonus: $(BONUS)
 $(BONUS): $(LIBDIR)$(LIBFT) $(BNSOBJDIR) $(BNSOBJS) $(INC)bonus.h
 	@ echo "\n\033[0;32mCompiling bonus..."
-	@ gcc $(CFLAGS) $(BNSOBJS) -I$(INC) -L$(LIBDIR) -lft -ltermcap -o $(BONUS)
+	@ $(CC) $(CFLAGS) $(BNSOBJS) -I$(INC) -L$(LIBDIR) -lft -ltermcap -o $(BONUS)
 	@ cp $(BONUS) ./$(NAME)
 	@ echo "\033[0;32mDone!\033[0m"
 
@@ -141,7 +144,7 @@ $(BNSOBJDIR):
 
 $(BNSOBJDIR)%.o: $(BNSDIR)%.c $(INC)bonus.h
 	@ printf "\033[0;33mGenerating bonus %-33.33s\r" $@
-	@ gcc $(CFLAGS) -I$(INC) -c -o $@ $<
+	@ $(CC) $(CFLAGS) -I$(INC) -c -o $@ $<
 
 # LEAKS
 val: $(NAME)
