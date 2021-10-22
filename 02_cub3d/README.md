@@ -1,6 +1,6 @@
 # :large_orange_diamond: cub3d &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/cub3d)
 
-The objective of this project is to create a dynamic view inside a maze using ray-casting.
+The objective of this project is to create a dynamic 3D perspective inside a maze from a 2D map using a technique called raycasting.
 
 ## :small_orange_diamond: Instructions
 

@@ -6,7 +6,7 @@
 /*   By: floogman <floogman@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 19:38:42 by floogman          #+#    #+#             */
-/*   Updated: 2021/10/07 09:10:57 by floogman         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:34:08 by floogman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <stdio.h> // perror
 # include <errno.h>
 # include <math.h>
 
