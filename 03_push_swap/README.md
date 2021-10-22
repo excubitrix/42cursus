@@ -23,6 +23,12 @@ The `push_swap` program takes as an argument also stack A formatted as a list of
 The number of instructions outputted by *push_swap* can be counted using wc like this:<br>
 `ARG="<list of intergers>"; ./push_swap $ARG | wc -l`
 
+## :small_orange_diamond: Sneak Peek
+
+Mandatory | Bonus Flags -scp | Bonus Flags -sc(p)g
+:--------:|:----------------:|:-----------------:
+![push_swap](https://user-images.githubusercontent.com/59726559/136754541-5d42ff30-3b35-4f64-9237-5ee721f8dbc2.gif) | ![push_swap_bonus_p](https://user-images.githubusercontent.com/59726559/136754751-4481b204-f041-47dd-80ec-46fceb8f8317.gif) | ![push_swap_bonus_g](https://user-images.githubusercontent.com/59726559/136755420-277733fc-3a60-4d7c-9f99-28384b6d13ed.gif)
+
 ## :small_orange_diamond: Bonus Flags
 
 Flags should be used as follows:<br>
@@ -36,10 +42,6 @@ Flag | Description | push_swap | checker
 `-p` | display the stacks after each instruction, each time overwriting the previous output | ❌ | ✅
 `-v` | display the stacks after each instruction without overwriting the previous output | ❌ | ✅
 `-g` | display the stacks after each instruction but as a graph | ❌ | ✅
-
-Mandatory | Bonus Flags -scp | Bonus Flags -sc(p)g
-:--------:|:----------------:|:-----------------:
-![push_swap](https://user-images.githubusercontent.com/59726559/136754541-5d42ff30-3b35-4f64-9237-5ee721f8dbc2.gif) | ![push_swap_bonus_p](https://user-images.githubusercontent.com/59726559/136754751-4481b204-f041-47dd-80ec-46fceb8f8317.gif) | ![push_swap_bonus_g](https://user-images.githubusercontent.com/59726559/136755420-277733fc-3a60-4d7c-9f99-28384b6d13ed.gif)
 
 ## :small_orange_diamond: Resources
 - [Divide and Conquer Algorithm](https://www.geeksforgeeks.org/divide-and-conquer-algorithm-introduction/)
