@@ -9,7 +9,7 @@ This project is an introduction to `templated containers`, `iterators` and `algo
 make
 ```
 
-2. Execute the desired program.
+2. Execute the desired program.<br>
 `./<exercise> [arguments]`
 ```
 ./00.out
