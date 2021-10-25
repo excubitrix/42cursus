@@ -24,8 +24,6 @@ NUMBER | EXERCISE | ARGUMENTS
 04 | [That's The Way I Like It, Nice and Boring](./ex04) | none
 05 | [Endless Red-Tape Generator](./ex05) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 04 | Module 06
 :--------:|:--------:

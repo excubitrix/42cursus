@@ -21,8 +21,6 @@ NUMBER | EXERCISE | ARGUMENTS
 01 | [Serialization](./ex01) | none
 02 | [Identify Real Type](./ex02) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 05 | Module 07
 :--------:|:--------:

@@ -21,8 +21,6 @@ NUMBER | EXERCISE | ARGUMENTS
 01 | [Iter](./ex01) | none
 02 | [Array](./ex02) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 06 | Module 08
 :--------:|:--------:

@@ -22,8 +22,6 @@ NUMBER | EXERCISE | ARGUMENTS
 02 | [Now We're Talking](./ex02) | none
 03 | [Fixed Point Expression](./ex03) | expression as string (e.g. `"( 18.18 + 3.03 ) * 2"`)
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 01 | Module 03
 :--------:|:--------:

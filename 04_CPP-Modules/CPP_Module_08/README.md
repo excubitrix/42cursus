@@ -23,8 +23,6 @@ NUMBER | EXERCISE | ARGUMENTS
 03 | [Open Your Mind, But Don't Blow It Up](./ex03) | file that contains "Mindopen" code (can be found in `programs/`)
 04 | [In Poland, Expression Evaluates You](./ex04) | expression as string (e.g. ` "3 + ((1 + 4) * 2) - 1"`)
 
-<br>
-
 ## :small_orange_diamond: Navigation
 | Module 07 |
 |:---------:|

@@ -21,8 +21,6 @@ NUMBER | EXERCISE | ARGUMENTS
 01 | [My Awesome PhoneBook](./ex01) | none
 02 | [The Job Of Your Dreams](./ex02) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 | Module 01 |
 |:---------:|

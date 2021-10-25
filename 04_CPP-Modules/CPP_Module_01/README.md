@@ -29,8 +29,6 @@ NUMBER | EXERCISE | ARGUMENTS
 09 | [Over Logging](./ex09) | none
 10 | [Cat O' Nine Tails](./ex10) | filename ... (optional)
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 00 | Module 02
 :--------:|:--------:

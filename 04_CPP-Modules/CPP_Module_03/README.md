@@ -23,8 +23,6 @@ NUMBER | EXERCISE | ARGUMENTS
 03 | [Now It's Easier!](./ex03) | none
 04 | [Ultimate Assault Shoebox](./ex04) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 02 | Module 04
 :--------:|:--------:

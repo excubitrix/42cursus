@@ -23,8 +23,6 @@ NUMBER | EXERCISE | ARGUMENTS
 03 | [Bocal Fantasy](./ex03) | none
 04 | [AFK Mining](./ex04) | none
 
-<br>
-
 ## :small_orange_diamond: Navigation
 Module 03 | Module 05
 :--------:|:--------:
