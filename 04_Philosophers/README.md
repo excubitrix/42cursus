@@ -6,9 +6,9 @@ The objective of this project is to code three different programs that each solv
 
 This project consists of three programs: `philo_one`, `philo_two` and `philo_three`.
 
-- in `philo_one` each philosopher is represented by a *thread* and the forks are protected by *mutex locks*
-- in `philo_two` each philosopher is also represented by a *thread* but the number of forks are represented by a *semaphore* this time
-- in `philo_three` each philosopher is now represented by a *process* but the number of forks are represented by a *semaphore* again
+- in `philo_one` each philosopher is represented by a `thread` and the forks are protected by `mutex locks`
+- in `philo_two` each philosopher is also represented by a `thread` but the number of forks are represented by a `semaphore` this time
+- in `philo_three` each philosopher is now represented by a `process` but the number of forks are represented by a `semaphore` again
 
 ## :small_orange_diamond: Instructions
 
@@ -24,6 +24,12 @@ Where
 - `time_to_sleep` is - in milliseconds - the time a philosopher will spend sleeping.
 
 `number_of_times_each_philosopher_must_eat` is an optional argument. If all philosophers have eaten at least `number_of_times_each_philosopher_must_eat` the simulation stops. If not specified, the simulation will stop only once a philosopher has died.
+
+## :small_orange_diamond: Sneak Peek
+
+`./one 20 800 200 200 4` | `./two 4 400 200 200` | `./three 200 520 200 200`
+:-----------------------:|:---------------------:|:------------------------:
+![philo_one](https://user-images.githubusercontent.com/59726559/138647741-9c762b73-ddd6-446a-a76d-74398f2d8550.gif) | ![philo_two](https://user-images.githubusercontent.com/59726559/138647755-65f09f89-f6db-4ca4-95dc-e3470019fa17.gif) | ![philo_three](https://user-images.githubusercontent.com/59726559/138647763-1db543bd-e397-416d-9040-3c2632c4a25b.gif)
 
 ## :small_orange_diamond: Resources
 - [Programming with Threads by Jacob Sorber](https://www.youtube.com/playlist?list=PL9IEJIKnBJjFZxuqyJ9JqVYmuFZHr7CFM)
