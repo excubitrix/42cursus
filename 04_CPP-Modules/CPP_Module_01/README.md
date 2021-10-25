@@ -9,8 +9,7 @@ This project is an introduction to `memory allocation`, `references`, `pointers 
 make
 ```
 
-2. Execute the desired program.<br>
-`./<exercise> [arguments]`
+2. Execute the desired program: `./<exercise> [arguments]`.
 ```
 ./00.out
 ```
