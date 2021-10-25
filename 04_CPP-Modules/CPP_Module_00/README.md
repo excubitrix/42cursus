@@ -21,6 +21,10 @@ NUMBER | EXERCISE | ARGUMENTS
 01 | [My Awesome PhoneBook](./ex01) | none
 02 | [The Job Of Your Dreams](./ex02) | none
 
+| Module 01 |
+|:---------:|
+| [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_01) |
+
 ## :small_orange_diamond: Resources
 #### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
@@ -32,7 +36,3 @@ NUMBER | EXERCISE | ARGUMENTS
 #### Attributions
 - Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
 - Next icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
-
-| NEXT |
-|:----:|
-| [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_01) |

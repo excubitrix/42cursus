@@ -24,6 +24,10 @@ NUMBER | EXERCISE | ARGUMENTS
 04 | [That's The Way I Like It, Nice and Boring](./ex04) | none
 05 | [Endless Red-Tape Generator](./ex05) | none
 
+Module 04 | Module 06
+:--------:|:--------:
+[![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_04) | [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_06)
+
 ## :small_orange_diamond: Resources
 #### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
@@ -35,7 +39,3 @@ NUMBER | EXERCISE | ARGUMENTS
 #### Attributions
 - Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
 - Prev/next icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
-
-PREV | NEXT
-:---:|:----:
-[![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_04) | [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_06)

@@ -23,6 +23,10 @@ NUMBER | EXERCISE | ARGUMENTS
 03 | [Open Your Mind, But Don't Blow It Up](./ex03) | file that contains "Mindopen" code (can be found in `programs/`)
 04 | [In Poland, Expression Evaluates You](./ex04) | expression as string (e.g. ` "3 + ((1 + 4) * 2) - 1"`)
 
+| Module 07 |
+|:---------:|
+| [![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_07) |
+
 ## :small_orange_diamond: Resources
 #### Makefile
 - [GNU make Manual](https://www.gnu.org/software/make/manual/make.html)
@@ -34,7 +38,3 @@ NUMBER | EXERCISE | ARGUMENTS
 #### Attributions
 - Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
 - Prev icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
-
-| PREV |
-|:----:|
-| [![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_07) |
