@@ -77,5 +77,5 @@ Flag | Description | push_swap | checker
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 - [Check Emoji](https://emojipedia.org/check-mark-button/)
 - [Cross Emoji](https://emojipedia.org/cross-mark/)
-#### ProjectScore Badge
-- [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)
+#### Attributions
+- Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)

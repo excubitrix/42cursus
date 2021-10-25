@@ -29,5 +29,10 @@ NUMBER | EXERCISE | ARGUMENTS
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-#### ProjectScore Badge
-- [🚀 Dynamically Generated Badge by badge42](https://github.com/JaeSeoKim/badge42)
+#### Attributions
+- Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
+- Icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+
+| NEXT |
+|:----:|
+| [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_01) |
