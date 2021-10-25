@@ -22,6 +22,9 @@ NUMBER | EXERCISE | ARGUMENTS
 02 | [Now We're Talking](./ex02) | none
 03 | [Fixed Point Expression](./ex03) | expression as string (e.g. `"( 18.18 + 3.03 ) * 2"`)
 
+<br>
+
+## :small_orange_diamond: Navigation
 Module 01 | Module 03
 :--------:|:--------:
 [![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_01) | [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_03)

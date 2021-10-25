@@ -21,6 +21,9 @@ NUMBER | EXERCISE | ARGUMENTS
 01 | [Iter](./ex01) | none
 02 | [Array](./ex02) | none
 
+<br>
+
+## :small_orange_diamond: Navigation
 Module 06 | Module 08
 :--------:|:--------:
 [![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_06) | [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_08)

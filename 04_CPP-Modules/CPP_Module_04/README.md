@@ -23,6 +23,9 @@ NUMBER | EXERCISE | ARGUMENTS
 03 | [Bocal Fantasy](./ex03) | none
 04 | [AFK Mining](./ex04) | none
 
+<br>
+
+## :small_orange_diamond: Navigation
 Module 03 | Module 05
 :--------:|:--------:
 [![prev](https://user-images.githubusercontent.com/59726559/138678592-27d20df6-cb62-4768-92d3-4bc270a6e4cf.png)](../CPP_Module_03) | [![next](https://user-images.githubusercontent.com/59726559/138678605-3d0e30f3-ebc6-41dc-aebe-03750086e76c.png)](../CPP_Module_05)
