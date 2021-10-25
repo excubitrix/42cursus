@@ -1,13 +1,28 @@
 # :large_orange_diamond: CPP Module 04 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2004)
 
+This project is an introduction to `subtype polymorphism`, `abstract classes` and `interfaces` in C++.
+
+## :small_orange_diamond: Instructions
+
+1. Run `make` to compile all exercises at once and copy the executables to your location - these copies will be named `00.out`, `01.out`, etc. - or `cd` into each directory separately and run the make command there (in that case the executable might have a different name).
+```
+make
+```
+
+2. Execute the desired program.
+`./<exercise> [arguments]`
+```
+./00.out
+```
+
 ## :small_orange_diamond: Exercise List
-NUMBER | EXERCISE
-:-----:|:--------:
-00 | [Polymorphism, or "When The Sorcerer Thinks You'd Be Cuter As A Sheep"](./ex00)
-01 | [I Don't Want To Set The World On Fire](./ex01)
-02 | [This Code Is Unclear. PURIFY IT!](./ex02)
-03 | [Bocal Fantasy](./ex03)
-04 | [AFK Mining](./ex04)
+NUMBER | EXERCISE | ARGUMENTS
+:-----:|:--------:|:--------:
+00 | [Polymorphism, or "When The Sorcerer Thinks You'd Be Cuter As A Sheep"](./ex00) | none
+01 | [I Don't Want To Set The World On Fire](./ex01) | none
+02 | [This Code Is Unclear. PURIFY IT!](./ex02) | none
+03 | [Bocal Fantasy](./ex03) | none
+04 | [AFK Mining](./ex04) | none
 
 ## :small_orange_diamond: Resources
 #### Makefile

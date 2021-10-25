@@ -1,13 +1,28 @@
 # :large_orange_diamond: CPP Module 08 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2008)
 
+This project is an introduction to `templated containers`, `iterators` and `algorithms` in C++.
+
+## :small_orange_diamond: Instructions
+
+1. Run `make` to compile all exercises at once and copy the executables to your location - these copies will be named `00.out`, `01.out`, etc. - or `cd` into each directory separately and run the make command there (in that case the executable might have a different name).
+```
+make
+```
+
+2. Execute the desired program.
+`./<exercise> [arguments]`
+```
+./00.out
+```
+
 ## :small_orange_diamond: Exercise List
-NUMBER | EXERCISE
-:-----:|:--------:
-00 | [Easy Find](./ex00)
-01 | [Span](./ex01)
-02 | [Mutated Abomination](./ex02)
-03 | [Open Your Mind, But Don't Blow It Up](./ex03)
-04 | [In Poland, Expression Evaluates You](./ex04)
+NUMBER | EXERCISE | ARGUMENTS
+:-----:|:--------:|:--------:
+00 | [Easy Find](./ex00) | none
+01 | [Span](./ex01) | none
+02 | [Mutated Abomination](./ex02) | none
+03 | [Open Your Mind, But Don't Blow It Up](./ex03) | file that contains "Mindopen" code (can be found in `programs/`)
+04 | [In Poland, Expression Evaluates You](./ex04) | expression as string (e.g. ` "3 + ((1 + 4) * 2) - 1"`)
 
 ## :small_orange_diamond: Resources
 #### Makefile

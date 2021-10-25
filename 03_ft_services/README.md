@@ -15,12 +15,18 @@ The objective of this project is to get familiar with Kubernetes by creating a m
 	```
 
 2. Execute the `setup.sh` script to launch the cluster.
+```
+./setup.sh
+```
 
 ## :small_orange_diamond: Useful Commands
 
 Command | Description
 :------:|:-----------:
-`kubectl exec -it container_name -- /bin/sh` | opens sh in a running container
+`kubectl exec -it <container_name> -- /bin/sh` | opens sh in a running container
+`minikube start` | starts a local Kubernetes cluster
+`minikube stop` | stops a local Kubernetes cluster (keeps user data intact)
+`minikube delete` | deletes a local Kubernetes cluster (removes all associated files)
 
 ## :small_orange_diamond: Resources
 #### Docker

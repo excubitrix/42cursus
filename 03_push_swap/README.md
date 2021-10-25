@@ -13,15 +13,27 @@ The `push_swap` program takes as an argument also stack A formatted as a list of
 ## :small_orange_diamond: Instructions
 
 1. Run `make` or `make bonus` to compile both programs.
+```
+make
+```
 
 2. Execute the progams separately
-    - `./<program> "<list of intergers>"`<br>
+    - `./<program> "<list of intergers>"`
+    ```
+    ./push_swap "4 9 2"
+    ```
 
     or together
     - `ARG="<list of intergers>"; ./push_swap $ARG | ./checker $ARG`
+    ```
+    ARG="4 9 2"; ./push_swap $ARG | ./checker $ARG
+    ```
 
 The number of instructions outputted by *push_swap* can be counted using wc like this:<br>
 `ARG="<list of intergers>"; ./push_swap $ARG | wc -l`
+```
+ARG="4 9 2"; ./push_swap $ARG | wc -l
+```
 
 ## :small_orange_diamond: Sneak Peek
 
@@ -32,8 +44,14 @@ Mandatory | Bonus Flags -scp | Bonus Flags -sc(p)g
 ## :small_orange_diamond: Bonus Flags
 
 Flags should be used as follows:<br>
-`ARG="<list of intergers>"; ./<program> [flags] $ARG` or<br>
-`ARG="<list of intergers>"; ./push_swap $ARG | ./checker [flags] $ARG`
+`ARG="<list of intergers>"; ./<program> [flags] $ARG`<br>
+```
+ARG="4 9 2"; ./push_swap -sc $ARG
+```
+or `ARG="<list of intergers>"; ./push_swap $ARG | ./checker [flags] $ARG`
+```
+ARG="4 9 2"; ./push_swap $ARG | ./checker -scpvg $ARG
+```
 
 Flag | Description | push_swap | checker
 :---:|:-----------:|:---------:|:-------:

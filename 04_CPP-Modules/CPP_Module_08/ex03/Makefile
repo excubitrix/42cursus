@@ -1,5 +1,5 @@
-NAME = a.out
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+NAME = ex03
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = \
 	MindOpen.cpp \

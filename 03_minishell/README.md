@@ -8,7 +8,15 @@ Minishell is a group project for a team of two students. Its objective is to cre
 
 ## :small_orange_diamond: Instructions
 
-Run `make` or `make bonus` to compile and `./minishell` to launch the shell.<br>
+1. Run `make` or `make bonus` to compile.
+```
+make
+```
+
+2. Launch the resulting executable.
+```
+./minishell
+```
 
 ## :small_orange_diamond: Features
 - The prompt shown when waiting for a new command, is the name of the current directory.

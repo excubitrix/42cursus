@@ -7,6 +7,9 @@ The objective of this project is to code a getline-esque function that returns a
 1. (optional) Change the size of the buffer in the Makefile.
 
 2. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
+```
+make
+```
 
 3. Link the resulting library `libgnl.a` using the `-L`/`-l` flags with your main.c file.
 
@@ -18,7 +21,7 @@ gcc -Wall -Wextra -Werror -L. -lgnl main.c
 
 ## :small_orange_diamond: Tester
 
-To test the mandatory version, execute the `run.sh` script located in the `./tester` folder without arguments.
+To test the mandatory version, execute the `run.sh` script located in the `./tester` directory without arguments.
 
 ```
 ./tester/run.sh

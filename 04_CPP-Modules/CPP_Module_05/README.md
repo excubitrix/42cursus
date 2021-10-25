@@ -1,14 +1,29 @@
 # :large_orange_diamond: CPP Module 05 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2005)
 
+This project is an introduction to `repetition` and `exceptions` in C++.
+
+## :small_orange_diamond: Instructions
+
+1. Run `make` to compile all exercises at once and copy the executables to your location - these copies will be named `00.out`, `01.out`, etc. - or `cd` into each directory separately and run the make command there (in that case the executable might have a different name).
+```
+make
+```
+
+2. Execute the desired program.
+`./<exercise> [arguments]`
+```
+./00.out
+```
+
 ## :small_orange_diamond: Exercise List
-NUMBER | EXERCISE
-:-----:|:--------:
-00 | [Mommy, When I Grow Up, I Want To Be A Bureaucrat!](./ex00)
-01 | [Form Up, Maggots!](./ex01)
-02 | [No, You Need Form 28B, not 28C...](./ex02)
-03 | [At Least This Beats Coffee-Making](./ex03)
-04 | [That's The Way I Like It, Nice and Boring](./ex04)
-05 | [Endless Red-Tape Generator](./ex05)
+NUMBER | EXERCISE | ARGUMENTS
+:-----:|:--------:|:--------:
+00 | [Mommy, When I Grow Up, I Want To Be A Bureaucrat!](./ex00) | none
+01 | [Form Up, Maggots!](./ex01) | none
+02 | [No, You Need Form 28B, not 28C...](./ex02) | none
+03 | [At Least This Beats Coffee-Making](./ex03) | none
+04 | [That's The Way I Like It, Nice and Boring](./ex04) | none
+05 | [Endless Red-Tape Generator](./ex05) | none
 
 ## :small_orange_diamond: Resources
 #### Makefile

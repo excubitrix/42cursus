@@ -12,10 +12,16 @@ This project consists of three programs: `philo_one`, `philo_two` and `philo_thr
 
 ## :small_orange_diamond: Instructions
 
-1. Run `make` in the root of the repository to compile all three programs at once and copy them to your location - these copies will be named `one`, `two` and `three` - or `cd` into each directory separately and run the make command there.
+1. Run `make` in the root of the repository to compile all three programs at once and copy them to your location - these copies will be named `one`, `two` and `three` - or `cd` into each directory separately and run the make command there (in that case the executables will be named `philo_one`, `philo_two` and `philo_three` respectively).
+```
+make
+```
 
 2. Execute the desired program as follows:
 `./<program> <number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]`
+```
+./one 200 520 200 200
+```
 
 Where
 - `number_of_philosophers` is the number of philosophers and also the number of forks,

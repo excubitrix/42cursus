@@ -11,6 +11,9 @@ Webserv is a group project for teams of two to three students. Its objective is 
 1. (optional) Setup a website in the `www/` directory and create a matching configuration file in the `config/` directory.
 
 1. Run `make` to compile the program.
+```
+make
+```
 
 2. Launch the server with the name of the configuration file from the `config/` directory you wish to use as first argument. (If no configuration file is specified, `default.conf` will be used.)
 ```

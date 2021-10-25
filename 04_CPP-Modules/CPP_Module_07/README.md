@@ -1,11 +1,26 @@
 # :large_orange_diamond: CPP Module 07 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2007)
 
+This project is an introduction to `templates` in C++.
+
+## :small_orange_diamond: Instructions
+
+1. Run `make` to compile all exercises at once and copy the executables to your location - these copies will be named `00.out`, `01.out`, etc. - or `cd` into each directory separately and run the make command there (in that case the executable might have a different name).
+```
+make
+```
+
+2. Execute the desired program.
+`./<exercise> [arguments]`
+```
+./00.out
+```
+
 ## :small_orange_diamond: Exercise List
-NUMBER | EXERCISE
-:-----:|:--------:
-00 | [A Few Functions](./ex00)
-01 | [Iter](./ex01)
-02 | [Array](./ex02)
+NUMBER | EXERCISE | ARGUMENTS
+:-----:|:--------:|:--------:
+00 | [A Few Functions](./ex00) | none
+01 | [Iter](./ex01) | none
+02 | [Array](./ex02) | none
 
 ## :small_orange_diamond: Resources
 #### Makefile

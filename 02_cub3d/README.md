@@ -5,10 +5,13 @@ The objective of this project is to create a dynamic 3D perspective inside a maz
 ## :small_orange_diamond: Instructions
 
 1. Run `make` to compile a game equipped with only the mandatory features and `make bonus` for one with all features.
+```
+make
+```
 
 2. Execute the resulting executable with a valid `.cub` file as its first argument.
 ```
-./cub3D maps/mandatory.cub
+./cub3D maps/bonus.cub
 ```
 
 ## :small_orange_diamond: Sneak Peek
@@ -23,12 +26,12 @@ Key(s) | Mandatory | Bonus
 :-----:|:---------:|:-----:
 `[w][a][s][d]` | move around the maze | move around the maze
 `[<][>]` | rotate the point of view | rotate the point of view
-`[^][v]` | n/a | rotate the point of view
-`mouse` | n/a | rotate the point of view
-`[space]` | n/a | jump
-`[shift]` | n/a | crouch
-`[e]` | n/a | interact with objects
-`[1][2][3][4]` | n/a | interact with objects in your inventory
+`[^][v]` | N/A | rotate the point of view
+`mouse` | N/A | rotate the point of view
+`[space]` | N/A | jump
+`[shift]` | N/A | crouch
+`[e]` | N/A | interact with objects
+`[1][2][3][4]` | N/A | interact with objects in your inventory
 `[esc]` | exit | exit
 
 
@@ -39,11 +42,11 @@ Symbol | Mandatory | Bonus
 `0` | space | space
 `1` | wall | wall
 `2` | sprite | sprite (1)
-`3` | n/a | sprite (2)
-`4` | n/a | collectable
-`5` | n/a | consumable
-`I` | n/a | vertical door / trap
-`H` | n/a | horizontal door
+`3` | N/A | sprite (2)
+`4` | N/A | collectable
+`5` | N/A | consumable
+`I` | N/A | vertical door / trap
+`H` | N/A | horizontal door
 `N/S/W/E` | starting position + direction | starting position + direction
 `(space)` | empty | empty
 

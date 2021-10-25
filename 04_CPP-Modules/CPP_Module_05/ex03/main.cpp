@@ -37,7 +37,7 @@ int		main(void)
 		delete robot;
 		delete shrub;
 
-		shrub = intern.makeForm("Random", "n/a");
+		shrub = intern.makeForm("Random", "N/A");
 	}
 	catch(const std::exception& e)
 	{

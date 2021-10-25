@@ -15,17 +15,18 @@ The objective of this project is to get familiar with assembly language.
 	```
 
 2. Run `make` for a library including only the mandatory functions and `make bonus` for a library including all functions.
+```
+make
+```
 
 ## :small_orange_diamond: Testing
 
-To test the mandatory functions, execute the `run.sh` script located in the `./tester` folder without arguments.
-
+To test the mandatory functions, execute the `run.sh` script located in the `./tester` directory without arguments.
 ```
 ./tester/run.sh
 ```
 
 To test the bonus functions, add the `-b` flag.
-
 ```
 ./tester/run.sh -b
 ```

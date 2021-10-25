@@ -5,6 +5,9 @@ The objective of this project is to code a simplified printf.
 ## :small_orange_diamond: Instructions
 
 1. Run `make` for a library containing the mandatory version or `make bonus` for a library containing the bonus version.
+```
+make
+```
 
 2. Link the resulting library `libftprintf.a` using the `-L`/`-l` flags with your main.c file.
 

@@ -2,12 +2,25 @@
 
 This project is an introduction to the basics of C++.
 
+## :small_orange_diamond: Instructions
+
+1. Run `make` to compile all exercises at once and copy the executables to your location - these copies will be named `00.out`, `01.out`, etc. - or `cd` into each directory separately and run the make command there (in that case the executable might have a different name).
+```
+make
+```
+
+2. Execute the desired program.
+`./<exercise> [arguments]`
+```
+./00.out
+```
+
 ## :small_orange_diamond: Exercise List
-NUMBER | EXERCISE
-:-----:|:--------:
-00 | [Megaphone](./ex00)
-01 | [My Awesome PhoneBook](./ex01)
-02 | [The Job Of Your Dreams](./ex02)
+NUMBER | EXERCISE | ARGUMENTS
+:-----:|:--------:|:--------:
+00 | [Megaphone](./ex00) | string (optional)
+01 | [My Awesome PhoneBook](./ex01) | none
+02 | [The Job Of Your Dreams](./ex02) | none
 
 ## :small_orange_diamond: Resources
 #### Makefile

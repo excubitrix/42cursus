@@ -14,19 +14,25 @@ The objective of this project is to set up a web server using docker.
 	brew install docker
 	```
 
-2. Run `docker build -t image_name .` to build the image.
+2. Run `docker build -t <image_name> .` to build the image.
+```
+docker build -t ft_server .
+```
 
-3. Run `docker run --name container_name -d -p 80:80 -p 443:443 image_name` to start the server.
+3. Run `docker run --name <container_name> -d -p 80:80 -p 443:443 <image_name>` to start the server.
+```
+docker run --name my_container -d -p 80:80 -p 443:443 ft_server
+```
 
 ## :small_orange_diamond: Useful Commands
 
 Command | Description
 :------:|:-----------:
-`docker exec -it container_name /bin/bash` | opens bash in a running container
+`docker exec -it <container_name> /bin/bash` | opens bash in a running container
 `sed -i "s/autoindex on/autoindex off/g" etc/nginx/sites-available/ft_server` | changes autoindex from on to off when inside the container
 `sed -i "s/autoindex off/autoindex on/g" etc/nginx/sites-available/ft_server` | changes autoindex from off to on when inside the container
 `service nginx restart` | to save the changes made 
-`docker cp container_name:/src/path /dest/path` | copies a file from a running container to the host
+`docker cp <container_name>:/src/path /dest/path` | copies a file from a running container to the host
 `docker stop $(docker ps -aq)` | stops all running containers
 `docker rm $(docker ps -aq)` | removes all containers
 `docker rmi $(docker images -q)` | removes all images

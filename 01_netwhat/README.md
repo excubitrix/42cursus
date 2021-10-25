@@ -2,6 +2,8 @@
 
 This project is an introduction to network problematics.
 
+<br>
+
 ## :small_orange_diamond: Notes
 ### What is an IP address?
 An `IP address` is a 32 bits ([IPv4](https://www.avast.com/c-ipv4-vs-ipv6-addresses)) unique address that identifies a device on the internet or a local network. IP stands for `"Internet Protocol"`, which is a set of rules governing the format of data sent via the internet or local network.<br>
