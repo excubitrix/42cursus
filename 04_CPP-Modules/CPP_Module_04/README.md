@@ -33,7 +33,7 @@ NUMBER | EXERCISE | ARGUMENTS
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### Attributions
 - Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
-- Icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+- Prev/next icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
 
 PREV | NEXT
 :---:|:----:
