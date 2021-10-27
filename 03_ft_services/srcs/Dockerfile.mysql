@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
-#    Updated: 2021/02/21 19:15:46 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/27 14:30:43 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ EXPOSE 3306
 
 RUN apk update && \
 	apk --no-cache add \
-	mysql=10.5.8-r0 \
-	mysql-client=10.5.8-r0 \
-	openssl=1.1.1j-r0 \
-	telegraf=1.17.0-r0 
+	mysql \
+	mysql-client \
+	openssl \
+	telegraf 
 
 CMD sh /scripts/start.sh

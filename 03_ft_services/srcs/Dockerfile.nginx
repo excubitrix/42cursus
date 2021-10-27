@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
-#    Updated: 2021/02/21 19:15:57 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/27 14:30:51 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ EXPOSE 80 443
 
 RUN apk update && \
 	apk --no-cache add \
-	nginx=1.18.0-r13 \
-	openssl=1.1.1j-r0 \
-	telegraf=1.17.0-r0
+	nginx \
+	openssl \
+	telegraf
 
 COPY /images /www/images
 

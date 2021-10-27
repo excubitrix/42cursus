@@ -208,15 +208,15 @@ data:
     <div class="row">
       <div class="column">
         <img src="/images/grafana.png" alt="" width="628" height="351">
-        <button onclick="document.location='https://192.168.64.102:3000/'">Visit Grafana</button>
+        <button onclick="document.location='https://192.168.64.121:3000/'">Visit Grafana</button>
       </div>
       <div class="column">
         <img src="/images/phpmyadmin.png" alt="" width="628" height="351">
-        <button onclick="document.location='https://192.168.64.102:5000/'">Visit phpMyAdmin</button>
+        <button onclick="document.location='https://192.168.64.121:5000/'">Visit phpMyAdmin</button>
       </div>
       <div class="column">
         <img src="/images/wordpress.png" alt="" width="628" height="351">
-        <button onclick="document.location='https://192.168.64.102:5050/'">Visit WordPress</button>
+        <button onclick="document.location='https://192.168.64.121:5050/'">Visit WordPress</button>
       </div>
     </div>
     <div class="footer">

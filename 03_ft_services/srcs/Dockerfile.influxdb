@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
-#    Updated: 2021/02/21 19:37:29 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/27 14:30:33 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ EXPOSE 8086
 
 RUN apk update && \
 	apk --no-cache add \
-	influxdb=1.8.3-r2 \
-	telegraf=1.17.0-r0
+	influxdb \
+	telegraf
 
 CMD sh scripts/start.sh

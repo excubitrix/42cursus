@@ -6,7 +6,7 @@
 #    By: floogman <floogman@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/14 09:58:08 by floogman          #+#    #+#              #
-#    Updated: 2021/02/21 19:16:16 by floogman         ###   ########.fr        #
+#    Updated: 2021/10/27 14:31:19 by floogman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,15 @@ EXPOSE 5050
 
 RUN apk update && \
 	apk --no-cache add \
-	nginx=1.18.0-r13 \
-	openssl=1.1.1j-r0 \
-	php7=7.4.15-r0 \
-	php7-fpm=7.4.15-r0 \
-    php7-json=7.4.15-r0 \
-	php7-mbstring=7.4.15-r0 \
-	php7-mysqli=7.4.15-r0 \
-    php7-session=7.4.15-r0 \
-	telegraf=1.17.0-r0
+	nginx \
+	openssl \
+	php7 \
+	php7-fpm \
+    php7-json \
+	php7-mbstring \
+	php7-mysqli \
+    php7-session \
+	telegraf
 
 ADD wordpress-5.6.tar.gz /www/
 

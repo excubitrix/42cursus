@@ -29,6 +29,7 @@ if [ $? -eq 7 ]; then
     minikube delete
 fi
 
+minikube config set WantUpdateNotification false
 printf "${YELLOW}❖ Starting Minikube\n${RESET}"
 minikube start --driver=hyperkit
 printf "${YELLOW}❖ Enabling addons\n${RESET}"

@@ -113,7 +113,7 @@ spec:
       write_enable=YES
 
       # configure second port
-      pasv_address=192.168.64.102
+      pasv_address=192.168.64.121
       pasv_min_port=30001
       pasv_max_port=30001
 
