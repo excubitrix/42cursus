@@ -15,9 +15,9 @@ f_check_img() {
     # 1 = service/image name
     if [[ $(docker image ls | grep $1) ]]
     then
-        printf "${GREEN} - $1 successfully created\n${RESET}"
+        printf "${GREEN} - $1 was successfully created\n${RESET}"
     else
-        printf "${RED} - failed to create $1; exiting\n${RESET}"
+        printf "${RED} - failed to create $1\nExiting\n${RESET}"
         exit 1
     fi
 }
