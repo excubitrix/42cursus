@@ -51,4 +51,4 @@ To test the bonus functions, add the `-b` flag.
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### Attributions
-- Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
+- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)

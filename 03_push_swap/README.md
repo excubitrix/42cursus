@@ -78,4 +78,4 @@ Flag | Description | push_swap | checker
 - [Check Emoji](https://emojipedia.org/check-mark-button/)
 - [Cross Emoji](https://emojipedia.org/cross-mark/)
 #### Attributions
-- Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
+- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)

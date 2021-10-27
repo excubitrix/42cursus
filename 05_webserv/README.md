@@ -57,4 +57,4 @@ return \<status_code\> [[http://<hostname>:<port>]/\<path\>];<br>&emsp;&emsp;&em
 - [Check Emoji](https://emojipedia.org/check-mark-button/)
 - [Cross Emoji](https://emojipedia.org/cross-mark/)
 #### Attributions
-- Dynamically generated badge by [badge42](https://github.com/JaeSeoKim/badge42)
+- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)
