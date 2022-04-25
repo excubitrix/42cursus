@@ -1,4 +1,4 @@
-# :large_orange_diamond: Philosophers &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/Philosophers)
+# :large_orange_diamond: Philosophers &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2148059)
 
 The objective of this project is to code three different programs that each solve the ["Dining Philosopher Problem"](https://en.wikipedia.org/wiki/Dining_philosophers_problem) in a slightly different way.
 
