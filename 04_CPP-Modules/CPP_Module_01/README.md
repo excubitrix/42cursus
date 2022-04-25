@@ -1,4 +1,4 @@
-# :large_orange_diamond: CPP Module 01 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2001)
+# :large_orange_diamond: CPP Module 01 &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2180204)
 
 This project is an introduction to `memory allocation`, `references`, `pointers to members` and `file streams` in C++.
 
