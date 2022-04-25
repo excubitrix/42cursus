@@ -1,4 +1,4 @@
-# :large_orange_diamond: ft_server &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_server)
+# :large_orange_diamond: ft_server &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2003654)
 
 The objective of this project is to set up a web server using docker.
 
