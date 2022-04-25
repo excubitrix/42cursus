@@ -1,4 +1,4 @@
-# :large_orange_diamond: get_next_line &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/get_next_line)
+# :large_orange_diamond: get_next_line &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/1847877)
 
 The objective of this project is to code a getline-esque function that returns a line ending with a newline, read from a file descriptor.
 
