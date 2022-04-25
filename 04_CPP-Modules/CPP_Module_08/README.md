@@ -1,4 +1,4 @@
-# :large_orange_diamond: CPP Module 08 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2008)
+# :large_orange_diamond: CPP Module 08 &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2206092)
 
 This project is an introduction to `templated containers`, `iterators` and `algorithms` in C++.
 
