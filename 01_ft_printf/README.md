@@ -1,4 +1,4 @@
- # :large_orange_diamond: ft_printf &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/ft_printf)
+ # :large_orange_diamond: ft_printf &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/1827176)
 
 The objective of this project is to code a simplified printf.
 
