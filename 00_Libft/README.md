@@ -1,4 +1,4 @@
-# :large_orange_diamond: Libft &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/Libft)
+# :large_orange_diamond: Libft &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/1743035)
 
 This is the very first project of the 2019 42cursus. Its objective is to recode a selection of useful standard library functions and build our own C library.
 
