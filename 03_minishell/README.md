@@ -1,4 +1,4 @@
-# :large_orange_diamond: minishell &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/minishell)
+# :large_orange_diamond: minishell &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2114952)
 
 Minishell is a group project for a team of two students. Its objective is to create a simple shell.
 
