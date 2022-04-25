@@ -1,4 +1,4 @@
-# :large_orange_diamond: webserv &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/webserv)
+# :large_orange_diamond: webserv &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2207692)
 
 Webserv is a group project for teams of two to three students. Its objective is to write an HTTP server.
 
