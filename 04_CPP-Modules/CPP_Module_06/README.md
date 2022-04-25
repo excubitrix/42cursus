@@ -1,4 +1,4 @@
-# :large_orange_diamond: CPP Module 06 &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2006)
+# :large_orange_diamond: CPP Module 06 &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2201377)
 
 This project is an introduction to `casts` in C++.
 
