@@ -1,4 +1,4 @@
-# :large_orange_diamond: push_swap &ensp; ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/push_swap)
+# :large_orange_diamond: push_swap &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2126465)
 
 The objective of this project is to sort data on a stack, using the lowest possible number of actions.
 
