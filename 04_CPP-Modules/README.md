@@ -3,15 +3,15 @@
 ## :small_orange_diamond: Module List
 MODULE | SCORE
 :-----:|:-----:
-[CPP Module 00](./CPP_Module_00) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2000)
-[CPP Module 01](./CPP_Module_01) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2001)
-[CPP Module 02](./CPP_Module_02) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2002)
-[CPP Module 03](./CPP_Module_03) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2003)
-[CPP Module 04](./CPP_Module_04) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2004)
-[CPP Module 05](./CPP_Module_05) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2005)
-[CPP Module 06](./CPP_Module_06) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2006)
-[CPP Module 07](./CPP_Module_07) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2007)
-[CPP Module 08](./CPP_Module_08) | ![42Project Score](https://badge42.herokuapp.com/api/project/floogman/CPP%20Module%2008)
+[CPP Module 00](./CPP_Module_00) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2148061)
+[CPP Module 01](./CPP_Module_01) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2180204)
+[CPP Module 02](./CPP_Module_02) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2183771)
+[CPP Module 03](./CPP_Module_03) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2185491)
+[CPP Module 04](./CPP_Module_04) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2186242)
+[CPP Module 05](./CPP_Module_05) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2197780)
+[CPP Module 06](./CPP_Module_06) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2201377)
+[CPP Module 07](./CPP_Module_07) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2203982)
+[CPP Module 08](./CPP_Module_08) | ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2206092)
 
 ## :small_orange_diamond: Resources
 #### README
