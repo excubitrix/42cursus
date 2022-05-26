@@ -53,16 +53,16 @@ int	initialise_listen_sd(const std::string &ip, const int &port)
 		throw std::runtime_error("fcntl() failed");
 
 	/* bind the socket */
-	struct sockaddr_in server_adrr;
-	memset(&server_adrr, 0, sizeof(server_adrr));
-	server_adrr.sin_family = AF_INET;
+	struct sockaddr_in server_addr;
+	memset(&server_addr, 0, sizeof(server_addr));
+	server_addr.sin_family = AF_INET;
 	if (ip == "0.0.0.0")
-		server_adrr.sin_addr.s_addr = htonl(INADDR_ANY);
+		server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	else
-		server_adrr.sin_addr.s_addr = inet_addr(ip.c_str());
-	server_adrr.sin_port = htons(port);
-	memset(server_adrr.sin_zero, '\0', sizeof(server_adrr.sin_zero));
-	if (bind(listen_sd, (struct sockaddr*)&server_adrr, sizeof(server_adrr)) == -1)
+		server_addr.sin_addr.s_addr = inet_addr(ip.c_str());
+	server_addr.sin_port = htons(port);
+	memset(server_addr.sin_zero, '\0', sizeof(server_addr.sin_zero));
+	if (bind(listen_sd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1)
 		throw std::runtime_error("bind() failed");
 
 	/* set the listen back log */
