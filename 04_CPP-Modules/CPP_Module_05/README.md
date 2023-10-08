@@ -1,4 +1,4 @@
-# :large_orange_diamond: CPP Module 05 &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2197780)
+# :large_orange_diamond: CPP Module 05
 
 This project is an introduction to `repetition` and `exceptions` in C++.
 
@@ -38,5 +38,4 @@ Module 04 | Module 06
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)
 - Prev/next icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)

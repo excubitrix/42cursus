@@ -1,4 +1,4 @@
-# :large_orange_diamond: ft_containers &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2207679)
+# :large_orange_diamond: ft_containers
 
 The objective of this project is to re-implement the following STL containers using the c++98 standard: `map`, `vector` and `stack`.
 
@@ -40,5 +40,3 @@ cd map
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-#### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)

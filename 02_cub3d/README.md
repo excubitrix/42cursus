@@ -1,4 +1,4 @@
-# :large_orange_diamond: cub3d &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2003655)
+# :large_orange_diamond: cub3d
 
 The objective of this project is to create a dynamic 3D perspective inside a maze from a 2D map using a technique called raycasting.
 
@@ -82,5 +82,3 @@ Unofficial bonuses (1):
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-#### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)

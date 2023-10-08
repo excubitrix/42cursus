@@ -1,4 +1,4 @@
-# :large_orange_diamond: CPP Module 04 &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2186242)
+# :large_orange_diamond: CPP Module 04
 
 This project is an introduction to `subtype polymorphism`, `abstract classes` and `interfaces` in C++.
 
@@ -37,5 +37,4 @@ Module 03 | Module 05
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
 #### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)
 - Prev/next icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)

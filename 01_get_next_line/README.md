@@ -1,4 +1,4 @@
-# :large_orange_diamond: get_next_line &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/1847877)
+# :large_orange_diamond: get_next_line
 
 The objective of this project is to code a getline-esque function that returns a line ending with a newline, read from a file descriptor.
 
@@ -54,5 +54,3 @@ To test the bonus version, add the `-b` flag.
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-#### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)

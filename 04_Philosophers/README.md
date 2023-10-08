@@ -1,4 +1,4 @@
-# :large_orange_diamond: Philosophers &ensp; ![42Project Score](https://badge42.vercel.app/api/v2/cl2etis99004009mnrj7l8h9o/project/2148059)
+# :large_orange_diamond: Philosophers
 
 The objective of this project is to code three different programs that each solve the ["Dining Philosopher Problem"](https://en.wikipedia.org/wiki/Dining_philosophers_problem) in a slightly different way.
 
@@ -46,5 +46,3 @@ Where
 #### README
 - [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Multiple Consecutive Spaces in Markdown](https://steemit.com/markdown/@jamesanto/how-to-add-multiple-spaces-between-texts-in-markdown)
-#### Attributions
-- Dynamically generated score badge by [badge42](https://github.com/JaeSeoKim/badge42)
